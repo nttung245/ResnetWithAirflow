@@ -1,0 +1,38 @@
+[2024-09-11T08:22:52.053+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-11T08:22:52.075+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: welcome_dag.train manual__2024-09-11T08:21:17.480199+00:00 [queued]>
+[2024-09-11T08:22:52.086+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: welcome_dag.train manual__2024-09-11T08:21:17.480199+00:00 [queued]>
+[2024-09-11T08:22:52.087+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-11T08:22:52.103+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): train> on 2024-09-11 08:21:17.480199+00:00
+[2024-09-11T08:22:52.121+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=269) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-11T08:22:52.124+0000] {standard_task_runner.py:72} INFO - Started process 293 to run task
+[2024-09-11T08:22:52.123+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'welcome_dag', 'train', 'manual__2024-09-11T08:21:17.480199+00:00', '--job-id', '31', '--raw', '--subdir', 'DAGS_FOLDER/welcome.py', '--cfg-path', '/tmp/tmp573zo6_l']
+[2024-09-11T08:22:52.124+0000] {standard_task_runner.py:105} INFO - Job 31: Subtask train
+[2024-09-11T08:22:52.181+0000] {task_command.py:467} INFO - Running <TaskInstance: welcome_dag.train manual__2024-09-11T08:21:17.480199+00:00 [running]> on host 54117699e6d9
+[2024-09-11T08:22:52.260+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='welcome_dag' AIRFLOW_CTX_TASK_ID='train' AIRFLOW_CTX_EXECUTION_DATE='2024-09-11T08:21:17.480199+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-11T08:21:17.480199+00:00'
+[2024-09-11T08:22:52.262+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-11T08:22:52.262+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-11T08:22:52.263+0000] {logging_mixin.py:190} INFO - Current task name:train state:running start_date:2024-09-11 08:22:52.076209+00:00
+[2024-09-11T08:22:52.263+0000] {logging_mixin.py:190} INFO - Dag name:welcome_dag and current dag run status:running
+[2024-09-11T08:22:52.263+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-11T08:22:52.282+0000] {warnings.py:112} WARNING - /opt/***/dags/welcome.py:114: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  trainloader = torch.load(kwargs['ti'].xcom_pull(task_ids='work_with_model')['trainloader_path'])
+
+[2024-09-11T08:22:52.915+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+
+[2024-09-11T08:22:52.915+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+
+[2024-09-11T08:22:53.241+0000] {warnings.py:112} WARNING - /opt/***/dags/welcome.py:119: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  net.load_state_dict(torch.load(model_path))
+
+[2024-09-11T08:22:53.325+0000] {warnings.py:112} WARNING - /opt/***/dags/welcome.py:123: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  optimizer.load_state_dict(torch.load(optimizer_path))
+
+[2024-09-11T08:25:48.398+0000] {logging_mixin.py:190} INFO - [Epoch 1, Batch 100] Loss: 1.417
+[2024-09-11T08:28:55.946+0000] {logging_mixin.py:190} INFO - [Epoch 1, Batch 200] Loss: 0.980
+[2024-09-11T08:31:45.958+0000] {logging_mixin.py:190} INFO - [Epoch 1, Batch 300] Loss: 0.886
+[2024-09-11T08:37:09.102+0000] {logging_mixin.py:190} INFO - [Epoch 2, Batch 100] Loss: 0.857
+[2024-09-11T08:39:55.000+0000] {logging_mixin.py:190} INFO - [Epoch 2, Batch 200] Loss: 0.830

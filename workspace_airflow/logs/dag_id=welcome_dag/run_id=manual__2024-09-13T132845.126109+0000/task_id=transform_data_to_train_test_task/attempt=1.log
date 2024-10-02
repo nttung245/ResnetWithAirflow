@@ -1,0 +1,136 @@
+[2024-09-13T13:28:55.059+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-13T13:28:55.084+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: welcome_dag.transform_data_to_train_test_task manual__2024-09-13T13:28:45.126109+00:00 [queued]>
+[2024-09-13T13:28:55.094+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: welcome_dag.transform_data_to_train_test_task manual__2024-09-13T13:28:45.126109+00:00 [queued]>
+[2024-09-13T13:28:55.095+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-13T13:28:55.114+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): transform_data_to_train_test_task> on 2024-09-13 13:28:45.126109+00:00
+[2024-09-13T13:28:55.133+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=251) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-13T13:28:55.134+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'welcome_dag', 'transform_data_to_train_test_task', 'manual__2024-09-13T13:28:45.126109+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/welcome.py', '--cfg-path', '/tmp/tmp5jxb54cn']
+[2024-09-13T13:28:55.135+0000] {standard_task_runner.py:72} INFO - Started process 253 to run task
+[2024-09-13T13:28:55.136+0000] {standard_task_runner.py:105} INFO - Job 43: Subtask transform_data_to_train_test_task
+[2024-09-13T13:28:55.196+0000] {task_command.py:467} INFO - Running <TaskInstance: welcome_dag.transform_data_to_train_test_task manual__2024-09-13T13:28:45.126109+00:00 [running]> on host 620abf759a7f
+[2024-09-13T13:28:55.297+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='welcome_dag' AIRFLOW_CTX_TASK_ID='transform_data_to_train_test_task' AIRFLOW_CTX_EXECUTION_DATE='2024-09-13T13:28:45.126109+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-13T13:28:45.126109+00:00'
+[2024-09-13T13:28:55.300+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-13T13:28:55.300+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-13T13:28:55.301+0000] {logging_mixin.py:190} INFO - Current task name:transform_data_to_train_test_task state:running start_date:2024-09-13 13:28:55.085021+00:00
+[2024-09-13T13:28:55.301+0000] {logging_mixin.py:190} INFO - Dag name:welcome_dag and current dag run status:running
+[2024-09-13T13:28:55.302+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-13T13:28:57.038+0000] {logging_mixin.py:190} INFO - Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ./data/cifar-10-python.tar.gz
+[2024-09-13T13:28:59.194+0000] {logging_mixin.py:190} WARNING - 0.0%
+[2024-09-13T13:29:00.535+0000] {logging_mixin.py:190} WARNING - 0.0%
+[2024-09-13T13:29:02.371+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:29:04.461+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:29:07.144+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:29:10.892+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:29:16.651+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:29:18.267+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:29:20.543+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:29:24.514+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:29:27.342+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:29:28.823+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:29:31.309+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:29:35.033+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:29:37.442+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:29:41.651+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:29:45.260+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:29:48.759+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:29:51.729+0000] {logging_mixin.py:190} WARNING - 0.4%
+[2024-09-13T13:29:52.818+0000] {logging_mixin.py:190} WARNING - 0.4%
+[2024-09-13T13:29:54.950+0000] {logging_mixin.py:190} WARNING - 0.4%
+[2024-09-13T13:29:57.995+0000] {logging_mixin.py:190} WARNING - 0.4%
+[2024-09-13T13:29:59.547+0000] {logging_mixin.py:190} WARNING - 0.4%
+[2024-09-13T13:30:01.412+0000] {logging_mixin.py:190} WARNING - 0.5%
+[2024-09-13T13:30:03.234+0000] {logging_mixin.py:190} WARNING - 0.5%
+[2024-09-13T13:30:08.921+0000] {logging_mixin.py:190} WARNING - 0.5%
+[2024-09-13T13:30:15.296+0000] {logging_mixin.py:190} WARNING - 0.5%
+[2024-09-13T13:30:19.594+0000] {logging_mixin.py:190} WARNING - 0.5%
+[2024-09-13T13:30:22.008+0000] {logging_mixin.py:190} WARNING - 0.6%
+[2024-09-13T13:30:26.171+0000] {logging_mixin.py:190} WARNING - 0.6%
+[2024-09-13T13:30:27.716+0000] {logging_mixin.py:190} WARNING - 0.6%
+[2024-09-13T13:30:28.408+0000] {logging_mixin.py:190} WARNING - 0.6%
+[2024-09-13T13:30:29.338+0000] {logging_mixin.py:190} WARNING - 0.6%
+[2024-09-13T13:30:30.493+0000] {logging_mixin.py:190} WARNING - 0.7%
+[2024-09-13T13:30:31.190+0000] {logging_mixin.py:190} WARNING - 0.7%
+[2024-09-13T13:30:32.777+0000] {logging_mixin.py:190} WARNING - 0.7%
+[2024-09-13T13:30:33.994+0000] {logging_mixin.py:190} WARNING - 0.7%
+[2024-09-13T13:30:35.827+0000] {logging_mixin.py:190} WARNING - 0.7%
+[2024-09-13T13:30:36.683+0000] {logging_mixin.py:190} WARNING - 0.7%
+[2024-09-13T13:30:37.567+0000] {logging_mixin.py:190} WARNING - 0.8%
+[2024-09-13T13:30:39.118+0000] {logging_mixin.py:190} WARNING - 0.8%
+[2024-09-13T13:30:41.530+0000] {logging_mixin.py:190} WARNING - 0.8%
+[2024-09-13T13:30:43.849+0000] {logging_mixin.py:190} WARNING - 0.8%
+[2024-09-13T13:30:46.031+0000] {logging_mixin.py:190} WARNING - 0.8%
+[2024-09-13T13:30:48.115+0000] {logging_mixin.py:190} WARNING - 0.9%
+[2024-09-13T13:30:49.777+0000] {logging_mixin.py:190} WARNING - 0.9%
+[2024-09-13T13:30:50.899+0000] {logging_mixin.py:190} WARNING - 0.9%
+[2024-09-13T13:30:51.942+0000] {logging_mixin.py:190} WARNING - 0.9%
+[2024-09-13T13:30:53.262+0000] {logging_mixin.py:190} WARNING - 0.9%
+[2024-09-13T13:30:56.037+0000] {logging_mixin.py:190} WARNING - 1.0%
+[2024-09-13T13:30:57.479+0000] {logging_mixin.py:190} WARNING - 1.0%
+[2024-09-13T13:31:11.316+0000] {logging_mixin.py:190} WARNING - 1.0%
+[2024-09-13T13:31:12.864+0000] {logging_mixin.py:190} WARNING - 1.0%
+[2024-09-13T13:31:14.473+0000] {logging_mixin.py:190} WARNING - 1.0%
+[2024-09-13T13:31:17.404+0000] {logging_mixin.py:190} WARNING - 1.1%
+[2024-09-13T13:31:19.100+0000] {logging_mixin.py:190} WARNING - 1.1%
+[2024-09-13T13:31:21.131+0000] {logging_mixin.py:190} WARNING - 1.1%
+[2024-09-13T13:31:23.064+0000] {logging_mixin.py:190} WARNING - 1.1%
+[2024-09-13T13:31:26.569+0000] {logging_mixin.py:190} WARNING - 1.1%
+[2024-09-13T13:31:29.013+0000] {logging_mixin.py:190} WARNING - 1.2%
+[2024-09-13T13:31:30.482+0000] {logging_mixin.py:190} WARNING - 1.2%
+[2024-09-13T13:31:31.872+0000] {logging_mixin.py:190} WARNING - 1.2%
+[2024-09-13T13:31:33.778+0000] {logging_mixin.py:190} WARNING - 1.2%
+[2024-09-13T13:31:34.870+0000] {logging_mixin.py:190} WARNING - 1.2%
+[2024-09-13T13:31:37.095+0000] {logging_mixin.py:190} WARNING - 1.2%
+[2024-09-13T13:31:43.219+0000] {logging_mixin.py:190} WARNING - 1.3%
+[2024-09-13T13:31:44.763+0000] {logging_mixin.py:190} WARNING - 1.3%
+[2024-09-13T13:31:46.561+0000] {logging_mixin.py:190} WARNING - 1.3%
+[2024-09-13T13:31:48.689+0000] {logging_mixin.py:190} WARNING - 1.3%
+[2024-09-13T13:31:50.638+0000] {logging_mixin.py:190} WARNING - 1.3%
+[2024-09-13T13:31:52.373+0000] {logging_mixin.py:190} WARNING - 1.4%
+[2024-09-13T13:31:53.569+0000] {logging_mixin.py:190} WARNING - 1.4%
+[2024-09-13T13:31:55.491+0000] {logging_mixin.py:190} WARNING - 1.4%
+[2024-09-13T13:31:56.687+0000] {logging_mixin.py:190} WARNING - 1.4%
+[2024-09-13T13:31:58.687+0000] {logging_mixin.py:190} WARNING - 1.4%
+[2024-09-13T13:32:01.877+0000] {logging_mixin.py:190} WARNING - 1.5%
+[2024-09-13T13:32:03.958+0000] {logging_mixin.py:190} WARNING - 1.5%
+[2024-09-13T13:32:08.979+0000] {logging_mixin.py:190} WARNING - 1.5%
+[2024-09-13T13:32:10.261+0000] {logging_mixin.py:190} WARNING - 1.5%
+[2024-09-13T13:32:11.474+0000] {logging_mixin.py:190} WARNING - 1.5%
+[2024-09-13T13:32:13.212+0000] {logging_mixin.py:190} WARNING - 1.6%
+[2024-09-13T13:32:17.129+0000] {logging_mixin.py:190} WARNING - 1.6%
+[2024-09-13T13:32:19.067+0000] {logging_mixin.py:190} WARNING - 1.6%
+[2024-09-13T13:32:22.058+0000] {logging_mixin.py:190} WARNING - 1.6%
+[2024-09-13T13:32:23.836+0000] {logging_mixin.py:190} WARNING - 1.6%
+[2024-09-13T13:32:25.919+0000] {logging_mixin.py:190} WARNING - 1.7%
+[2024-09-13T13:32:29.370+0000] {logging_mixin.py:190} WARNING - 1.7%
+[2024-09-13T13:32:31.621+0000] {logging_mixin.py:190} WARNING - 1.7%
+[2024-09-13T13:32:34.085+0000] {logging_mixin.py:190} WARNING - 1.7%
+[2024-09-13T13:32:36.560+0000] {logging_mixin.py:190} WARNING - 1.7%
+[2024-09-13T13:32:41.074+0000] {logging_mixin.py:190} WARNING - 1.7%
+[2024-09-13T13:32:42.709+0000] {logging_mixin.py:190} WARNING - 1.8%
+[2024-09-13T13:32:45.900+0000] {logging_mixin.py:190} WARNING - 1.8%
+[2024-09-13T13:32:48.013+0000] {logging_mixin.py:190} WARNING - 1.8%
+[2024-09-13T13:32:51.780+0000] {logging_mixin.py:190} WARNING - 1.8%
+[2024-09-13T13:32:54.752+0000] {logging_mixin.py:190} WARNING - 1.8%
+[2024-09-13T13:32:57.187+0000] {logging_mixin.py:190} WARNING - 1.9%
+[2024-09-13T13:32:58.579+0000] {logging_mixin.py:190} WARNING - 1.9%
+[2024-09-13T13:32:59.705+0000] {logging_mixin.py:190} WARNING - 1.9%
+[2024-09-13T13:33:01.809+0000] {logging_mixin.py:190} WARNING - 1.9%
+[2024-09-13T13:33:02.850+0000] {logging_mixin.py:190} WARNING - 1.9%
+[2024-09-13T13:33:03.888+0000] {logging_mixin.py:190} WARNING - 2.0%
+[2024-09-13T13:33:05.688+0000] {logging_mixin.py:190} WARNING - 2.0%
+[2024-09-13T13:33:07.037+0000] {logging_mixin.py:190} WARNING - 2.0%
+[2024-09-13T13:33:09.128+0000] {logging_mixin.py:190} WARNING - 2.0%
+[2024-09-13T13:33:11.403+0000] {logging_mixin.py:190} WARNING - 2.0%
+[2024-09-13T13:33:13.045+0000] {logging_mixin.py:190} WARNING - 2.1%
+[2024-09-13T13:33:15.175+0000] {logging_mixin.py:190} WARNING - 2.1%
+[2024-09-13T13:33:19.782+0000] {logging_mixin.py:190} WARNING - 2.1%
+[2024-09-13T13:33:21.774+0000] {logging_mixin.py:190} WARNING - 2.1%
+[2024-09-13T13:33:22.794+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2024-09-13T13:33:22.795+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-09-13T13:33:22.796+0000] {process_utils.py:132} INFO - Sending 15 to group 253. PIDs of all processes in the group: [253]
+[2024-09-13T13:33:22.797+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 253
+[2024-09-13T13:33:22.797+0000] {taskinstance.py:3092} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-09-13T13:33:22.815+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-13T13:33:22.849+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=253, status='terminated', exitcode=0, started='13:28:54') (253) terminated with exit code 0

@@ -1,0 +1,821 @@
+[2024-09-11T08:22:30.516+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-11T08:22:30.533+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: welcome_dag.work_with_model manual__2024-09-11T08:21:17.480199+00:00 [queued]>
+[2024-09-11T08:22:30.541+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: welcome_dag.work_with_model manual__2024-09-11T08:21:17.480199+00:00 [queued]>
+[2024-09-11T08:22:30.542+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-11T08:22:30.553+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): work_with_model> on 2024-09-11 08:21:17.480199+00:00
+[2024-09-11T08:22:30.568+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=247) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-11T08:22:30.569+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'welcome_dag', 'work_with_model', 'manual__2024-09-11T08:21:17.480199+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/welcome.py', '--cfg-path', '/tmp/tmppxb2ia8_']
+[2024-09-11T08:22:30.570+0000] {standard_task_runner.py:72} INFO - Started process 249 to run task
+[2024-09-11T08:22:30.570+0000] {standard_task_runner.py:105} INFO - Job 29: Subtask work_with_model
+[2024-09-11T08:22:30.612+0000] {task_command.py:467} INFO - Running <TaskInstance: welcome_dag.work_with_model manual__2024-09-11T08:21:17.480199+00:00 [running]> on host 54117699e6d9
+[2024-09-11T08:22:30.683+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='welcome_dag' AIRFLOW_CTX_TASK_ID='work_with_model' AIRFLOW_CTX_EXECUTION_DATE='2024-09-11T08:21:17.480199+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-11T08:21:17.480199+00:00'
+[2024-09-11T08:22:30.685+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-11T08:22:30.685+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-11T08:22:30.685+0000] {logging_mixin.py:190} INFO - Current task name:work_with_model state:running start_date:2024-09-11 08:22:30.534422+00:00
+[2024-09-11T08:22:30.685+0000] {logging_mixin.py:190} INFO - Dag name:welcome_dag and current dag run status:running
+[2024-09-11T08:22:30.686+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-11T08:22:30.695+0000] {warnings.py:112} WARNING - /opt/***/dags/welcome.py:59: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  trainloader = torch.load(data['trainloader_path'])
+
+[2024-09-11T08:22:31.778+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+
+[2024-09-11T08:22:31.779+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+[2024-09-11T08:22:32.169+0000] {logging_mixin.py:190} WARNING - Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /home/***/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth
+[2024-09-11T08:22:32.486+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-11T08:22:32.498+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-11T08:22:32.508+0000] {logging_mixin.py:190} WARNING - 0.4%
+[2024-09-11T08:22:32.518+0000] {logging_mixin.py:190} WARNING - 0.5%
+[2024-09-11T08:22:32.531+0000] {logging_mixin.py:190} WARNING - 0.6%
+[2024-09-11T08:22:32.542+0000] {logging_mixin.py:190} WARNING - 0.8%
+[2024-09-11T08:22:32.551+0000] {logging_mixin.py:190} WARNING - 0.9%
+[2024-09-11T08:22:32.564+0000] {logging_mixin.py:190} WARNING - 1.0%
+[2024-09-11T08:22:32.577+0000] {logging_mixin.py:190} WARNING - 1.2%
+[2024-09-11T08:22:32.586+0000] {logging_mixin.py:190} WARNING - 1.3%
+[2024-09-11T08:22:32.597+0000] {logging_mixin.py:190} WARNING - 1.4%
+[2024-09-11T08:22:32.611+0000] {logging_mixin.py:190} WARNING - 1.5%
+[2024-09-11T08:22:32.617+0000] {logging_mixin.py:190} WARNING - 1.7%
+[2024-09-11T08:22:32.631+0000] {logging_mixin.py:190} WARNING - 1.8%
+[2024-09-11T08:22:32.639+0000] {logging_mixin.py:190} WARNING - 1.9%
+[2024-09-11T08:22:32.651+0000] {logging_mixin.py:190} WARNING - 2.0%
+[2024-09-11T08:22:32.661+0000] {logging_mixin.py:190} WARNING - 2.2%
+[2024-09-11T08:22:32.672+0000] {logging_mixin.py:190} WARNING - 2.3%
+[2024-09-11T08:22:32.685+0000] {logging_mixin.py:190} WARNING - 2.4%
+[2024-09-11T08:22:32.695+0000] {logging_mixin.py:190} WARNING - 2.6%
+[2024-09-11T08:22:32.707+0000] {logging_mixin.py:190} WARNING - 2.7%
+[2024-09-11T08:22:32.717+0000] {logging_mixin.py:190} WARNING - 2.8%
+[2024-09-11T08:22:32.728+0000] {logging_mixin.py:190} WARNING - 2.9%
+[2024-09-11T08:22:32.739+0000] {logging_mixin.py:190} WARNING - 3.1%
+[2024-09-11T08:22:32.751+0000] {logging_mixin.py:190} WARNING - 3.2%
+[2024-09-11T08:22:32.763+0000] {logging_mixin.py:190} WARNING - 3.3%
+[2024-09-11T08:22:32.772+0000] {logging_mixin.py:190} WARNING - 3.5%
+[2024-09-11T08:22:32.784+0000] {logging_mixin.py:190} WARNING - 3.6%
+[2024-09-11T08:22:32.794+0000] {logging_mixin.py:190} WARNING - 3.7%
+[2024-09-11T08:22:32.808+0000] {logging_mixin.py:190} WARNING - 3.8%
+[2024-09-11T08:22:32.817+0000] {logging_mixin.py:190} WARNING - 4.0%
+[2024-09-11T08:22:32.829+0000] {logging_mixin.py:190} WARNING - 4.1%
+[2024-09-11T08:22:32.840+0000] {logging_mixin.py:190} WARNING - 4.2%
+[2024-09-11T08:22:32.851+0000] {logging_mixin.py:190} WARNING - 4.3%
+[2024-09-11T08:22:32.861+0000] {logging_mixin.py:190} WARNING - 4.5%
+[2024-09-11T08:22:32.874+0000] {logging_mixin.py:190} WARNING - 4.6%
+[2024-09-11T08:22:32.883+0000] {logging_mixin.py:190} WARNING - 4.7%
+[2024-09-11T08:22:32.895+0000] {logging_mixin.py:190} WARNING - 4.9%
+[2024-09-11T08:22:32.905+0000] {logging_mixin.py:190} WARNING - 5.0%
+[2024-09-11T08:22:32.917+0000] {logging_mixin.py:190} WARNING - 5.1%
+[2024-09-11T08:22:32.931+0000] {logging_mixin.py:190} WARNING - 5.2%
+[2024-09-11T08:22:32.942+0000] {logging_mixin.py:190} WARNING - 5.4%
+[2024-09-11T08:22:32.951+0000] {logging_mixin.py:190} WARNING - 5.5%
+[2024-09-11T08:22:32.961+0000] {logging_mixin.py:190} WARNING - 5.6%
+[2024-09-11T08:22:32.972+0000] {logging_mixin.py:190} WARNING - 5.8%
+[2024-09-11T08:22:32.983+0000] {logging_mixin.py:190} WARNING - 5.9%
+[2024-09-11T08:22:32.994+0000] {logging_mixin.py:190} WARNING - 6.0%
+[2024-09-11T08:22:33.006+0000] {logging_mixin.py:190} WARNING - 6.1%
+[2024-09-11T08:22:33.024+0000] {logging_mixin.py:190} WARNING - 6.3%
+[2024-09-11T08:22:33.027+0000] {logging_mixin.py:190} WARNING - 6.4%
+[2024-09-11T08:22:33.039+0000] {logging_mixin.py:190} WARNING - 6.5%
+[2024-09-11T08:22:33.050+0000] {logging_mixin.py:190} WARNING - 6.6%
+[2024-09-11T08:22:33.063+0000] {logging_mixin.py:190} WARNING - 6.8%
+[2024-09-11T08:22:33.072+0000] {logging_mixin.py:190} WARNING - 6.9%
+[2024-09-11T08:22:33.082+0000] {logging_mixin.py:190} WARNING - 7.0%
+[2024-09-11T08:22:33.093+0000] {logging_mixin.py:190} WARNING - 7.2%
+[2024-09-11T08:22:33.104+0000] {logging_mixin.py:190} WARNING - 7.3%
+[2024-09-11T08:22:33.117+0000] {logging_mixin.py:190} WARNING - 7.4%
+[2024-09-11T08:22:33.133+0000] {logging_mixin.py:190} WARNING - 7.5%
+[2024-09-11T08:22:33.137+0000] {logging_mixin.py:190} WARNING - 7.7%
+[2024-09-11T08:22:33.149+0000] {logging_mixin.py:190} WARNING - 7.8%
+[2024-09-11T08:22:33.163+0000] {logging_mixin.py:190} WARNING - 7.9%
+[2024-09-11T08:22:33.172+0000] {logging_mixin.py:190} WARNING - 8.1%
+[2024-09-11T08:22:33.184+0000] {logging_mixin.py:190} WARNING - 8.2%
+[2024-09-11T08:22:33.194+0000] {logging_mixin.py:190} WARNING - 8.3%
+[2024-09-11T08:22:33.205+0000] {logging_mixin.py:190} WARNING - 8.4%
+[2024-09-11T08:22:33.215+0000] {logging_mixin.py:190} WARNING - 8.6%
+[2024-09-11T08:22:33.226+0000] {logging_mixin.py:190} WARNING - 8.7%
+[2024-09-11T08:22:33.237+0000] {logging_mixin.py:190} WARNING - 8.8%
+[2024-09-11T08:22:33.248+0000] {logging_mixin.py:190} WARNING - 8.9%
+[2024-09-11T08:22:33.259+0000] {logging_mixin.py:190} WARNING - 9.1%
+[2024-09-11T08:22:33.274+0000] {logging_mixin.py:190} WARNING - 9.2%
+[2024-09-11T08:22:33.284+0000] {logging_mixin.py:190} WARNING - 9.3%
+[2024-09-11T08:22:33.294+0000] {logging_mixin.py:190} WARNING - 9.5%
+[2024-09-11T08:22:33.304+0000] {logging_mixin.py:190} WARNING - 9.6%
+[2024-09-11T08:22:33.317+0000] {logging_mixin.py:190} WARNING - 9.7%
+[2024-09-11T08:22:33.327+0000] {logging_mixin.py:190} WARNING - 9.8%
+[2024-09-11T08:22:33.338+0000] {logging_mixin.py:190} WARNING - 10.0%
+[2024-09-11T08:22:33.352+0000] {logging_mixin.py:190} WARNING - 10.1%
+[2024-09-11T08:22:33.361+0000] {logging_mixin.py:190} WARNING - 10.2%
+[2024-09-11T08:22:33.372+0000] {logging_mixin.py:190} WARNING - 10.4%
+[2024-09-11T08:22:33.383+0000] {logging_mixin.py:190} WARNING - 10.5%
+[2024-09-11T08:22:33.395+0000] {logging_mixin.py:190} WARNING - 10.6%
+[2024-09-11T08:22:33.404+0000] {logging_mixin.py:190} WARNING - 10.7%
+[2024-09-11T08:22:33.416+0000] {logging_mixin.py:190} WARNING - 10.9%
+[2024-09-11T08:22:33.429+0000] {logging_mixin.py:190} WARNING - 11.0%
+[2024-09-11T08:22:33.440+0000] {logging_mixin.py:190} WARNING - 11.1%
+[2024-09-11T08:22:33.451+0000] {logging_mixin.py:190} WARNING - 11.2%
+[2024-09-11T08:22:33.461+0000] {logging_mixin.py:190} WARNING - 11.4%
+[2024-09-11T08:22:33.474+0000] {logging_mixin.py:190} WARNING - 11.5%
+[2024-09-11T08:22:33.484+0000] {logging_mixin.py:190} WARNING - 11.6%
+[2024-09-11T08:22:33.494+0000] {logging_mixin.py:190} WARNING - 11.8%
+[2024-09-11T08:22:33.505+0000] {logging_mixin.py:190} WARNING - 11.9%
+[2024-09-11T08:22:33.516+0000] {logging_mixin.py:190} WARNING - 12.0%
+[2024-09-11T08:22:33.529+0000] {logging_mixin.py:190} WARNING - 12.1%
+[2024-09-11T08:22:33.538+0000] {logging_mixin.py:190} WARNING - 12.3%
+[2024-09-11T08:22:33.552+0000] {logging_mixin.py:190} WARNING - 12.4%
+[2024-09-11T08:22:33.559+0000] {logging_mixin.py:190} WARNING - 12.5%
+[2024-09-11T08:22:33.571+0000] {logging_mixin.py:190} WARNING - 12.7%
+[2024-09-11T08:22:33.583+0000] {logging_mixin.py:190} WARNING - 12.8%
+[2024-09-11T08:22:33.593+0000] {logging_mixin.py:190} WARNING - 12.9%
+[2024-09-11T08:22:33.606+0000] {logging_mixin.py:190} WARNING - 13.0%
+[2024-09-11T08:22:33.615+0000] {logging_mixin.py:190} WARNING - 13.2%
+[2024-09-11T08:22:33.627+0000] {logging_mixin.py:190} WARNING - 13.3%
+[2024-09-11T08:22:33.639+0000] {logging_mixin.py:190} WARNING - 13.4%
+[2024-09-11T08:22:33.649+0000] {logging_mixin.py:190} WARNING - 13.6%
+[2024-09-11T08:22:33.662+0000] {logging_mixin.py:190} WARNING - 13.7%
+[2024-09-11T08:22:33.671+0000] {logging_mixin.py:190} WARNING - 13.8%
+[2024-09-11T08:22:33.692+0000] {logging_mixin.py:190} WARNING - 13.9%
+[2024-09-11T08:22:33.695+0000] {logging_mixin.py:190} WARNING - 14.1%
+[2024-09-11T08:22:33.704+0000] {logging_mixin.py:190} WARNING - 14.2%
+[2024-09-11T08:22:33.715+0000] {logging_mixin.py:190} WARNING - 14.3%
+[2024-09-11T08:22:33.726+0000] {logging_mixin.py:190} WARNING - 14.4%
+[2024-09-11T08:22:33.739+0000] {logging_mixin.py:190} WARNING - 14.6%
+[2024-09-11T08:22:33.748+0000] {logging_mixin.py:190} WARNING - 14.7%
+[2024-09-11T08:22:33.759+0000] {logging_mixin.py:190} WARNING - 14.8%
+[2024-09-11T08:22:33.771+0000] {logging_mixin.py:190} WARNING - 15.0%
+[2024-09-11T08:22:33.781+0000] {logging_mixin.py:190} WARNING - 15.1%
+[2024-09-11T08:22:33.792+0000] {logging_mixin.py:190} WARNING - 15.2%
+[2024-09-11T08:22:33.803+0000] {logging_mixin.py:190} WARNING - 15.3%
+[2024-09-11T08:22:33.815+0000] {logging_mixin.py:190} WARNING - 15.5%
+[2024-09-11T08:22:33.825+0000] {logging_mixin.py:190} WARNING - 15.6%
+[2024-09-11T08:22:33.839+0000] {logging_mixin.py:190} WARNING - 15.7%
+[2024-09-11T08:22:33.849+0000] {logging_mixin.py:190} WARNING - 15.9%
+[2024-09-11T08:22:33.859+0000] {logging_mixin.py:190} WARNING - 16.0%
+[2024-09-11T08:22:33.869+0000] {logging_mixin.py:190} WARNING - 16.1%
+[2024-09-11T08:22:33.880+0000] {logging_mixin.py:190} WARNING - 16.2%
+[2024-09-11T08:22:33.892+0000] {logging_mixin.py:190} WARNING - 16.4%
+[2024-09-11T08:22:33.903+0000] {logging_mixin.py:190} WARNING - 16.5%
+[2024-09-11T08:22:33.914+0000] {logging_mixin.py:190} WARNING - 16.6%
+[2024-09-11T08:22:33.927+0000] {logging_mixin.py:190} WARNING - 16.7%
+[2024-09-11T08:22:33.938+0000] {logging_mixin.py:190} WARNING - 16.9%
+[2024-09-11T08:22:33.948+0000] {logging_mixin.py:190} WARNING - 17.0%
+[2024-09-11T08:22:33.960+0000] {logging_mixin.py:190} WARNING - 17.1%
+[2024-09-11T08:22:33.984+0000] {logging_mixin.py:190} WARNING - 17.3%
+[2024-09-11T08:22:33.991+0000] {logging_mixin.py:190} WARNING - 17.4%
+[2024-09-11T08:22:33.994+0000] {logging_mixin.py:190} WARNING - 17.5%
+[2024-09-11T08:22:34.002+0000] {logging_mixin.py:190} WARNING - 17.6%
+[2024-09-11T08:22:34.014+0000] {logging_mixin.py:190} WARNING - 17.8%
+[2024-09-11T08:22:34.025+0000] {logging_mixin.py:190} WARNING - 17.9%
+[2024-09-11T08:22:34.036+0000] {logging_mixin.py:190} WARNING - 18.0%
+[2024-09-11T08:22:34.053+0000] {logging_mixin.py:190} WARNING - 18.2%
+[2024-09-11T08:22:34.065+0000] {logging_mixin.py:190} WARNING - 18.3%
+[2024-09-11T08:22:34.076+0000] {logging_mixin.py:190} WARNING - 18.4%
+[2024-09-11T08:22:34.087+0000] {logging_mixin.py:190} WARNING - 18.5%
+[2024-09-11T08:22:34.098+0000] {logging_mixin.py:190} WARNING - 18.7%
+[2024-09-11T08:22:34.108+0000] {logging_mixin.py:190} WARNING - 18.8%
+[2024-09-11T08:22:34.120+0000] {logging_mixin.py:190} WARNING - 18.9%
+[2024-09-11T08:22:34.131+0000] {logging_mixin.py:190} WARNING - 19.0%
+[2024-09-11T08:22:34.144+0000] {logging_mixin.py:190} WARNING - 19.2%
+[2024-09-11T08:22:34.155+0000] {logging_mixin.py:190} WARNING - 19.3%
+[2024-09-11T08:22:34.164+0000] {logging_mixin.py:190} WARNING - 19.4%
+[2024-09-11T08:22:34.177+0000] {logging_mixin.py:190} WARNING - 19.6%
+[2024-09-11T08:22:34.188+0000] {logging_mixin.py:190} WARNING - 19.7%
+[2024-09-11T08:22:34.198+0000] {logging_mixin.py:190} WARNING - 19.8%
+[2024-09-11T08:22:34.209+0000] {logging_mixin.py:190} WARNING - 19.9%
+[2024-09-11T08:22:34.223+0000] {logging_mixin.py:190} WARNING - 20.1%
+[2024-09-11T08:22:34.232+0000] {logging_mixin.py:190} WARNING - 20.2%
+[2024-09-11T08:22:34.244+0000] {logging_mixin.py:190} WARNING - 20.3%
+[2024-09-11T08:22:34.252+0000] {logging_mixin.py:190} WARNING - 20.5%
+[2024-09-11T08:22:34.266+0000] {logging_mixin.py:190} WARNING - 20.6%
+[2024-09-11T08:22:34.277+0000] {logging_mixin.py:190} WARNING - 20.7%
+[2024-09-11T08:22:34.287+0000] {logging_mixin.py:190} WARNING - 20.8%
+[2024-09-11T08:22:34.297+0000] {logging_mixin.py:190} WARNING - 21.0%
+[2024-09-11T08:22:34.310+0000] {logging_mixin.py:190} WARNING - 21.1%
+[2024-09-11T08:22:34.319+0000] {logging_mixin.py:190} WARNING - 21.2%
+[2024-09-11T08:22:34.332+0000] {logging_mixin.py:190} WARNING - 21.3%
+[2024-09-11T08:22:34.343+0000] {logging_mixin.py:190} WARNING - 21.5%
+[2024-09-11T08:22:34.353+0000] {logging_mixin.py:190} WARNING - 21.6%
+[2024-09-11T08:22:34.364+0000] {logging_mixin.py:190} WARNING - 21.7%
+[2024-09-11T08:22:34.376+0000] {logging_mixin.py:190} WARNING - 21.9%
+[2024-09-11T08:22:34.386+0000] {logging_mixin.py:190} WARNING - 22.0%
+[2024-09-11T08:22:34.399+0000] {logging_mixin.py:190} WARNING - 22.1%
+[2024-09-11T08:22:34.410+0000] {logging_mixin.py:190} WARNING - 22.2%
+[2024-09-11T08:22:34.421+0000] {logging_mixin.py:190} WARNING - 22.4%
+[2024-09-11T08:22:34.430+0000] {logging_mixin.py:190} WARNING - 22.5%
+[2024-09-11T08:22:34.441+0000] {logging_mixin.py:190} WARNING - 22.6%
+[2024-09-11T08:22:34.455+0000] {logging_mixin.py:190} WARNING - 22.8%
+[2024-09-11T08:22:34.464+0000] {logging_mixin.py:190} WARNING - 22.9%
+[2024-09-11T08:22:34.476+0000] {logging_mixin.py:190} WARNING - 23.0%
+[2024-09-11T08:22:34.487+0000] {logging_mixin.py:190} WARNING - 23.1%
+[2024-09-11T08:22:34.498+0000] {logging_mixin.py:190} WARNING - 23.3%
+[2024-09-11T08:22:34.508+0000] {logging_mixin.py:190} WARNING - 23.4%
+[2024-09-11T08:22:34.519+0000] {logging_mixin.py:190} WARNING - 23.5%
+[2024-09-11T08:22:34.531+0000] {logging_mixin.py:190} WARNING - 23.6%
+[2024-09-11T08:22:34.541+0000] {logging_mixin.py:190} WARNING - 23.8%
+[2024-09-11T08:22:34.552+0000] {logging_mixin.py:190} WARNING - 23.9%
+[2024-09-11T08:22:34.564+0000] {logging_mixin.py:190} WARNING - 24.0%
+[2024-09-11T08:22:34.574+0000] {logging_mixin.py:190} WARNING - 24.2%
+[2024-09-11T08:22:34.585+0000] {logging_mixin.py:190} WARNING - 24.3%
+[2024-09-11T08:22:34.596+0000] {logging_mixin.py:190} WARNING - 24.4%
+[2024-09-11T08:22:34.607+0000] {logging_mixin.py:190} WARNING - 24.5%
+[2024-09-11T08:22:34.618+0000] {logging_mixin.py:190} WARNING - 24.7%
+[2024-09-11T08:22:34.630+0000] {logging_mixin.py:190} WARNING - 24.8%
+[2024-09-11T08:22:34.643+0000] {logging_mixin.py:190} WARNING - 24.9%
+[2024-09-11T08:22:34.652+0000] {logging_mixin.py:190} WARNING - 25.1%
+[2024-09-11T08:22:34.665+0000] {logging_mixin.py:190} WARNING - 25.2%
+[2024-09-11T08:22:34.674+0000] {logging_mixin.py:190} WARNING - 25.3%
+[2024-09-11T08:22:34.684+0000] {logging_mixin.py:190} WARNING - 25.4%
+[2024-09-11T08:22:34.696+0000] {logging_mixin.py:190} WARNING - 25.6%
+[2024-09-11T08:22:34.740+0000] {logging_mixin.py:190} WARNING - 25.7%
+[2024-09-11T08:22:34.747+0000] {logging_mixin.py:190} WARNING - 25.8%
+[2024-09-11T08:22:34.750+0000] {logging_mixin.py:190} WARNING - 26.0%
+[2024-09-11T08:22:34.753+0000] {logging_mixin.py:190} WARNING - 26.1%
+[2024-09-11T08:22:34.757+0000] {logging_mixin.py:190} WARNING - 26.2%
+[2024-09-11T08:22:34.766+0000] {logging_mixin.py:190} WARNING - 26.3%
+[2024-09-11T08:22:34.776+0000] {logging_mixin.py:190} WARNING - 26.5%
+[2024-09-11T08:22:34.788+0000] {logging_mixin.py:190} WARNING - 26.6%
+[2024-09-11T08:22:34.798+0000] {logging_mixin.py:190} WARNING - 26.7%
+[2024-09-11T08:22:34.809+0000] {logging_mixin.py:190} WARNING - 26.8%
+[2024-09-11T08:22:34.820+0000] {logging_mixin.py:190} WARNING - 27.0%
+[2024-09-11T08:22:34.831+0000] {logging_mixin.py:190} WARNING - 27.1%
+[2024-09-11T08:22:34.842+0000] {logging_mixin.py:190} WARNING - 27.2%
+[2024-09-11T08:22:34.855+0000] {logging_mixin.py:190} WARNING - 27.4%
+[2024-09-11T08:22:34.865+0000] {logging_mixin.py:190} WARNING - 27.5%
+[2024-09-11T08:22:34.876+0000] {logging_mixin.py:190} WARNING - 27.6%
+[2024-09-11T08:22:34.890+0000] {logging_mixin.py:190} WARNING - 27.7%
+[2024-09-11T08:22:34.898+0000] {logging_mixin.py:190} WARNING - 27.9%
+[2024-09-11T08:22:34.921+0000] {logging_mixin.py:190} WARNING - 28.0%
+[2024-09-11T08:22:34.933+0000] {logging_mixin.py:190} WARNING - 28.1%
+[2024-09-11T08:22:35.031+0000] {logging_mixin.py:190} WARNING - 28.3%
+[2024-09-11T08:22:35.040+0000] {logging_mixin.py:190} WARNING - 28.4%
+[2024-09-11T08:22:35.044+0000] {logging_mixin.py:190} WARNING - 28.5%
+[2024-09-11T08:22:35.047+0000] {logging_mixin.py:190} WARNING - 28.6%
+[2024-09-11T08:22:35.050+0000] {logging_mixin.py:190} WARNING - 28.8%
+[2024-09-11T08:22:35.082+0000] {logging_mixin.py:190} WARNING - 28.9%
+[2024-09-11T08:22:35.091+0000] {logging_mixin.py:190} WARNING - 29.0%
+[2024-09-11T08:22:35.107+0000] {logging_mixin.py:190} WARNING - 29.1%
+[2024-09-11T08:22:35.112+0000] {logging_mixin.py:190} WARNING - 29.3%
+[2024-09-11T08:22:35.115+0000] {logging_mixin.py:190} WARNING - 29.4%
+[2024-09-11T08:22:35.126+0000] {logging_mixin.py:190} WARNING - 29.5%
+[2024-09-11T08:22:35.136+0000] {logging_mixin.py:190} WARNING - 29.7%
+[2024-09-11T08:22:35.146+0000] {logging_mixin.py:190} WARNING - 29.8%
+[2024-09-11T08:22:35.158+0000] {logging_mixin.py:190} WARNING - 29.9%
+[2024-09-11T08:22:35.172+0000] {logging_mixin.py:190} WARNING - 30.0%
+[2024-09-11T08:22:35.180+0000] {logging_mixin.py:190} WARNING - 30.2%
+[2024-09-11T08:22:35.191+0000] {logging_mixin.py:190} WARNING - 30.3%
+[2024-09-11T08:22:35.201+0000] {logging_mixin.py:190} WARNING - 30.4%
+[2024-09-11T08:22:35.214+0000] {logging_mixin.py:190} WARNING - 30.6%
+[2024-09-11T08:22:35.225+0000] {logging_mixin.py:190} WARNING - 30.7%
+[2024-09-11T08:22:35.235+0000] {logging_mixin.py:190} WARNING - 30.8%
+[2024-09-11T08:22:35.246+0000] {logging_mixin.py:190} WARNING - 30.9%
+[2024-09-11T08:22:35.262+0000] {logging_mixin.py:190} WARNING - 31.1%
+[2024-09-11T08:22:35.275+0000] {logging_mixin.py:190} WARNING - 31.2%
+[2024-09-11T08:22:35.285+0000] {logging_mixin.py:190} WARNING - 31.3%
+[2024-09-11T08:22:35.294+0000] {logging_mixin.py:190} WARNING - 31.4%
+[2024-09-11T08:22:35.304+0000] {logging_mixin.py:190} WARNING - 31.6%
+[2024-09-11T08:22:35.320+0000] {logging_mixin.py:190} WARNING - 31.7%
+[2024-09-11T08:22:35.329+0000] {logging_mixin.py:190} WARNING - 31.8%
+[2024-09-11T08:22:35.340+0000] {logging_mixin.py:190} WARNING - 32.0%
+[2024-09-11T08:22:35.350+0000] {logging_mixin.py:190} WARNING - 32.1%
+[2024-09-11T08:22:35.362+0000] {logging_mixin.py:190} WARNING - 32.2%
+[2024-09-11T08:22:35.374+0000] {logging_mixin.py:190} WARNING - 32.3%
+[2024-09-11T08:22:35.384+0000] {logging_mixin.py:190} WARNING - 32.5%
+[2024-09-11T08:22:35.397+0000] {logging_mixin.py:190} WARNING - 32.6%
+[2024-09-11T08:22:35.406+0000] {logging_mixin.py:190} WARNING - 32.7%
+[2024-09-11T08:22:35.460+0000] {logging_mixin.py:190} WARNING - 32.9%
+[2024-09-11T08:22:35.463+0000] {logging_mixin.py:190} WARNING - 33.0%
+[2024-09-11T08:22:35.472+0000] {logging_mixin.py:190} WARNING - 33.1%
+[2024-09-11T08:22:35.475+0000] {logging_mixin.py:190} WARNING - 33.2%
+[2024-09-11T08:22:35.478+0000] {logging_mixin.py:190} WARNING - 33.4%
+[2024-09-11T08:22:35.482+0000] {logging_mixin.py:190} WARNING - 33.5%
+[2024-09-11T08:22:35.485+0000] {logging_mixin.py:190} WARNING - 33.6%
+[2024-09-11T08:22:35.495+0000] {logging_mixin.py:190} WARNING - 33.7%
+[2024-09-11T08:22:35.505+0000] {logging_mixin.py:190} WARNING - 33.9%
+[2024-09-11T08:22:35.518+0000] {logging_mixin.py:190} WARNING - 34.0%
+[2024-09-11T08:22:35.527+0000] {logging_mixin.py:190} WARNING - 34.1%
+[2024-09-11T08:22:35.541+0000] {logging_mixin.py:190} WARNING - 34.3%
+[2024-09-11T08:22:35.549+0000] {logging_mixin.py:190} WARNING - 34.4%
+[2024-09-11T08:22:35.562+0000] {logging_mixin.py:190} WARNING - 34.5%
+[2024-09-11T08:22:35.573+0000] {logging_mixin.py:190} WARNING - 34.6%
+[2024-09-11T08:22:35.583+0000] {logging_mixin.py:190} WARNING - 34.8%
+[2024-09-11T08:22:35.597+0000] {logging_mixin.py:190} WARNING - 34.9%
+[2024-09-11T08:22:35.606+0000] {logging_mixin.py:190} WARNING - 35.0%
+[2024-09-11T08:22:35.617+0000] {logging_mixin.py:190} WARNING - 35.2%
+[2024-09-11T08:22:35.626+0000] {logging_mixin.py:190} WARNING - 35.3%
+[2024-09-11T08:22:35.641+0000] {logging_mixin.py:190} WARNING - 35.4%
+[2024-09-11T08:22:35.650+0000] {logging_mixin.py:190} WARNING - 35.5%
+[2024-09-11T08:22:35.662+0000] {logging_mixin.py:190} WARNING - 35.7%
+[2024-09-11T08:22:35.672+0000] {logging_mixin.py:190} WARNING - 35.8%
+[2024-09-11T08:22:35.683+0000] {logging_mixin.py:190} WARNING - 35.9%
+[2024-09-11T08:22:35.694+0000] {logging_mixin.py:190} WARNING - 36.1%
+[2024-09-11T08:22:35.706+0000] {logging_mixin.py:190} WARNING - 36.2%
+[2024-09-11T08:22:35.718+0000] {logging_mixin.py:190} WARNING - 36.3%
+[2024-09-11T08:22:35.728+0000] {logging_mixin.py:190} WARNING - 36.4%
+[2024-09-11T08:22:35.740+0000] {logging_mixin.py:190} WARNING - 36.6%
+[2024-09-11T08:22:35.751+0000] {logging_mixin.py:190} WARNING - 36.7%
+[2024-09-11T08:22:35.760+0000] {logging_mixin.py:190} WARNING - 36.8%
+[2024-09-11T08:22:35.771+0000] {logging_mixin.py:190} WARNING - 36.9%
+[2024-09-11T08:22:35.783+0000] {logging_mixin.py:190} WARNING - 37.1%
+[2024-09-11T08:22:35.794+0000] {logging_mixin.py:190} WARNING - 37.2%
+[2024-09-11T08:22:35.805+0000] {logging_mixin.py:190} WARNING - 37.3%
+[2024-09-11T08:22:35.816+0000] {logging_mixin.py:190} WARNING - 37.5%
+[2024-09-11T08:22:35.827+0000] {logging_mixin.py:190} WARNING - 37.6%
+[2024-09-11T08:22:35.839+0000] {logging_mixin.py:190} WARNING - 37.7%
+[2024-09-11T08:22:35.851+0000] {logging_mixin.py:190} WARNING - 37.8%
+[2024-09-11T08:22:35.861+0000] {logging_mixin.py:190} WARNING - 38.0%
+[2024-09-11T08:22:35.871+0000] {logging_mixin.py:190} WARNING - 38.1%
+[2024-09-11T08:22:35.884+0000] {logging_mixin.py:190} WARNING - 38.2%
+[2024-09-11T08:22:35.894+0000] {logging_mixin.py:190} WARNING - 38.4%
+[2024-09-11T08:22:35.905+0000] {logging_mixin.py:190} WARNING - 38.5%
+[2024-09-11T08:22:35.914+0000] {logging_mixin.py:190} WARNING - 38.6%
+[2024-09-11T08:22:35.926+0000] {logging_mixin.py:190} WARNING - 38.7%
+[2024-09-11T08:22:35.938+0000] {logging_mixin.py:190} WARNING - 38.9%
+[2024-09-11T08:22:35.951+0000] {logging_mixin.py:190} WARNING - 39.0%
+[2024-09-11T08:22:35.960+0000] {logging_mixin.py:190} WARNING - 39.1%
+[2024-09-11T08:22:35.973+0000] {logging_mixin.py:190} WARNING - 39.2%
+[2024-09-11T08:22:35.982+0000] {logging_mixin.py:190} WARNING - 39.4%
+[2024-09-11T08:22:36.001+0000] {logging_mixin.py:190} WARNING - 39.5%
+[2024-09-11T08:22:36.007+0000] {logging_mixin.py:190} WARNING - 39.6%
+[2024-09-11T08:22:36.015+0000] {logging_mixin.py:190} WARNING - 39.8%
+[2024-09-11T08:22:36.029+0000] {logging_mixin.py:190} WARNING - 39.9%
+[2024-09-11T08:22:36.037+0000] {logging_mixin.py:190} WARNING - 40.0%
+[2024-09-11T08:22:36.048+0000] {logging_mixin.py:190} WARNING - 40.1%
+[2024-09-11T08:22:36.059+0000] {logging_mixin.py:190} WARNING - 40.3%
+[2024-09-11T08:22:36.070+0000] {logging_mixin.py:190} WARNING - 40.4%
+[2024-09-11T08:22:36.082+0000] {logging_mixin.py:190} WARNING - 40.5%
+[2024-09-11T08:22:36.094+0000] {logging_mixin.py:190} WARNING - 40.7%
+[2024-09-11T08:22:36.102+0000] {logging_mixin.py:190} WARNING - 40.8%
+[2024-09-11T08:22:36.117+0000] {logging_mixin.py:190} WARNING - 40.9%
+[2024-09-11T08:22:36.126+0000] {logging_mixin.py:190} WARNING - 41.0%
+[2024-09-11T08:22:36.139+0000] {logging_mixin.py:190} WARNING - 41.2%
+[2024-09-11T08:22:36.149+0000] {logging_mixin.py:190} WARNING - 41.3%
+[2024-09-11T08:22:36.158+0000] {logging_mixin.py:190} WARNING - 41.4%
+[2024-09-11T08:22:36.170+0000] {logging_mixin.py:190} WARNING - 41.5%
+[2024-09-11T08:22:36.180+0000] {logging_mixin.py:190} WARNING - 41.7%
+[2024-09-11T08:22:36.194+0000] {logging_mixin.py:190} WARNING - 41.8%
+[2024-09-11T08:22:36.202+0000] {logging_mixin.py:190} WARNING - 41.9%
+[2024-09-11T08:22:36.213+0000] {logging_mixin.py:190} WARNING - 42.1%
+[2024-09-11T08:22:36.226+0000] {logging_mixin.py:190} WARNING - 42.2%
+[2024-09-11T08:22:36.235+0000] {logging_mixin.py:190} WARNING - 42.3%
+[2024-09-11T08:22:36.255+0000] {logging_mixin.py:190} WARNING - 42.4%
+[2024-09-11T08:22:36.278+0000] {logging_mixin.py:190} WARNING - 42.6%
+[2024-09-11T08:22:36.289+0000] {logging_mixin.py:190} WARNING - 42.7%
+[2024-09-11T08:22:36.294+0000] {logging_mixin.py:190} WARNING - 42.8%
+[2024-09-11T08:22:36.316+0000] {logging_mixin.py:190} WARNING - 43.0%
+[2024-09-11T08:22:36.338+0000] {logging_mixin.py:190} WARNING - 43.1%
+[2024-09-11T08:22:36.376+0000] {logging_mixin.py:190} WARNING - 43.2%
+[2024-09-11T08:22:36.397+0000] {logging_mixin.py:190} WARNING - 43.3%
+[2024-09-11T08:22:36.417+0000] {logging_mixin.py:190} WARNING - 43.5%
+[2024-09-11T08:22:36.426+0000] {logging_mixin.py:190} WARNING - 43.6%
+[2024-09-11T08:22:36.439+0000] {logging_mixin.py:190} WARNING - 43.7%
+[2024-09-11T08:22:36.444+0000] {logging_mixin.py:190} WARNING - 43.8%
+[2024-09-11T08:22:36.449+0000] {logging_mixin.py:190} WARNING - 44.0%
+[2024-09-11T08:22:36.463+0000] {logging_mixin.py:190} WARNING - 44.1%
+[2024-09-11T08:22:36.473+0000] {logging_mixin.py:190} WARNING - 44.2%
+[2024-09-11T08:22:36.480+0000] {logging_mixin.py:190} WARNING - 44.4%
+[2024-09-11T08:22:36.486+0000] {logging_mixin.py:190} WARNING - 44.5%
+[2024-09-11T08:22:36.492+0000] {logging_mixin.py:190} WARNING - 44.6%
+[2024-09-11T08:22:36.497+0000] {logging_mixin.py:190} WARNING - 44.7%
+[2024-09-11T08:22:36.502+0000] {logging_mixin.py:190} WARNING - 44.9%
+[2024-09-11T08:22:36.505+0000] {logging_mixin.py:190} WARNING - 45.0%
+[2024-09-11T08:22:36.509+0000] {logging_mixin.py:190} WARNING - 45.1%
+[2024-09-11T08:22:36.513+0000] {logging_mixin.py:190} WARNING - 45.3%
+[2024-09-11T08:22:36.517+0000] {logging_mixin.py:190} WARNING - 45.4%
+[2024-09-11T08:22:36.521+0000] {logging_mixin.py:190} WARNING - 45.5%
+[2024-09-11T08:22:36.526+0000] {logging_mixin.py:190} WARNING - 45.6%
+[2024-09-11T08:22:36.536+0000] {logging_mixin.py:190} WARNING - 45.8%
+[2024-09-11T08:22:36.548+0000] {logging_mixin.py:190} WARNING - 45.9%
+[2024-09-11T08:22:36.560+0000] {logging_mixin.py:190} WARNING - 46.0%
+[2024-09-11T08:22:36.570+0000] {logging_mixin.py:190} WARNING - 46.1%
+[2024-09-11T08:22:36.584+0000] {logging_mixin.py:190} WARNING - 46.3%
+[2024-09-11T08:22:36.594+0000] {logging_mixin.py:190} WARNING - 46.4%
+[2024-09-11T08:22:36.602+0000] {logging_mixin.py:190} WARNING - 46.5%
+[2024-09-11T08:22:36.635+0000] {logging_mixin.py:190} WARNING - 46.7%
+[2024-09-11T08:22:36.639+0000] {logging_mixin.py:190} WARNING - 46.8%
+[2024-09-11T08:22:36.642+0000] {logging_mixin.py:190} WARNING - 46.9%
+[2024-09-11T08:22:36.647+0000] {logging_mixin.py:190} WARNING - 47.0%
+[2024-09-11T08:22:36.659+0000] {logging_mixin.py:190} WARNING - 47.2%
+[2024-09-11T08:22:36.680+0000] {logging_mixin.py:190} WARNING - 47.3%
+[2024-09-11T08:22:36.688+0000] {logging_mixin.py:190} WARNING - 47.4%
+[2024-09-11T08:22:36.698+0000] {logging_mixin.py:190} WARNING - 47.6%
+[2024-09-11T08:22:36.708+0000] {logging_mixin.py:190} WARNING - 47.7%
+[2024-09-11T08:22:36.717+0000] {logging_mixin.py:190} WARNING - 47.8%
+[2024-09-11T08:22:36.729+0000] {logging_mixin.py:190} WARNING - 47.9%
+[2024-09-11T08:22:36.737+0000] {logging_mixin.py:190} WARNING - 48.1%
+[2024-09-11T08:22:36.749+0000] {logging_mixin.py:190} WARNING - 48.2%
+[2024-09-11T08:22:36.761+0000] {logging_mixin.py:190} WARNING - 48.3%
+[2024-09-11T08:22:36.771+0000] {logging_mixin.py:190} WARNING - 48.5%
+[2024-09-11T08:22:36.782+0000] {logging_mixin.py:190} WARNING - 48.6%
+[2024-09-11T08:22:36.794+0000] {logging_mixin.py:190} WARNING - 48.7%
+[2024-09-11T08:22:36.805+0000] {logging_mixin.py:190} WARNING - 48.8%
+[2024-09-11T08:22:36.817+0000] {logging_mixin.py:190} WARNING - 49.0%
+[2024-09-11T08:22:36.827+0000] {logging_mixin.py:190} WARNING - 49.1%
+[2024-09-11T08:22:36.841+0000] {logging_mixin.py:190} WARNING - 49.2%
+[2024-09-11T08:22:36.848+0000] {logging_mixin.py:190} WARNING - 49.3%
+[2024-09-11T08:22:36.900+0000] {logging_mixin.py:190} WARNING - 49.5%
+[2024-09-11T08:22:36.905+0000] {logging_mixin.py:190} WARNING - 49.6%
+[2024-09-11T08:22:36.913+0000] {logging_mixin.py:190} WARNING - 49.7%
+[2024-09-11T08:22:36.930+0000] {logging_mixin.py:190} WARNING - 49.9%
+[2024-09-11T08:22:36.935+0000] {logging_mixin.py:190} WARNING - 50.0%
+[2024-09-11T08:22:36.938+0000] {logging_mixin.py:190} WARNING - 50.1%
+[2024-09-11T08:22:36.942+0000] {logging_mixin.py:190} WARNING - 50.2%
+[2024-09-11T08:22:36.945+0000] {logging_mixin.py:190} WARNING - 50.4%
+[2024-09-11T08:22:36.948+0000] {logging_mixin.py:190} WARNING - 50.5%
+[2024-09-11T08:22:36.960+0000] {logging_mixin.py:190} WARNING - 50.6%
+[2024-09-11T08:22:36.973+0000] {logging_mixin.py:190} WARNING - 50.8%
+[2024-09-11T08:22:36.982+0000] {logging_mixin.py:190} WARNING - 50.9%
+[2024-09-11T08:22:36.995+0000] {logging_mixin.py:190} WARNING - 51.0%
+[2024-09-11T08:22:37.006+0000] {logging_mixin.py:190} WARNING - 51.1%
+[2024-09-11T08:22:37.017+0000] {logging_mixin.py:190} WARNING - 51.3%
+[2024-09-11T08:22:37.026+0000] {logging_mixin.py:190} WARNING - 51.4%
+[2024-09-11T08:22:37.036+0000] {logging_mixin.py:190} WARNING - 51.5%
+[2024-09-11T08:22:37.050+0000] {logging_mixin.py:190} WARNING - 51.6%
+[2024-09-11T08:22:37.058+0000] {logging_mixin.py:190} WARNING - 51.8%
+[2024-09-11T08:22:37.075+0000] {logging_mixin.py:190} WARNING - 51.9%
+[2024-09-11T08:22:37.086+0000] {logging_mixin.py:190} WARNING - 52.0%
+[2024-09-11T08:22:37.096+0000] {logging_mixin.py:190} WARNING - 52.2%
+[2024-09-11T08:22:37.110+0000] {logging_mixin.py:190} WARNING - 52.3%
+[2024-09-11T08:22:37.122+0000] {logging_mixin.py:190} WARNING - 52.4%
+[2024-09-11T08:22:37.134+0000] {logging_mixin.py:190} WARNING - 52.5%
+[2024-09-11T08:22:37.145+0000] {logging_mixin.py:190} WARNING - 52.7%
+[2024-09-11T08:22:37.153+0000] {logging_mixin.py:190} WARNING - 52.8%
+[2024-09-11T08:22:37.163+0000] {logging_mixin.py:190} WARNING - 52.9%
+[2024-09-11T08:22:37.173+0000] {logging_mixin.py:190} WARNING - 53.1%
+[2024-09-11T08:22:37.187+0000] {logging_mixin.py:190} WARNING - 53.2%
+[2024-09-11T08:22:37.199+0000] {logging_mixin.py:190} WARNING - 53.3%
+[2024-09-11T08:22:37.209+0000] {logging_mixin.py:190} WARNING - 53.4%
+[2024-09-11T08:22:37.219+0000] {logging_mixin.py:190} WARNING - 53.6%
+[2024-09-11T08:22:37.231+0000] {logging_mixin.py:190} WARNING - 53.7%
+[2024-09-11T08:22:37.240+0000] {logging_mixin.py:190} WARNING - 53.8%
+[2024-09-11T08:22:37.252+0000] {logging_mixin.py:190} WARNING - 53.9%
+[2024-09-11T08:22:37.263+0000] {logging_mixin.py:190} WARNING - 54.1%
+[2024-09-11T08:22:37.276+0000] {logging_mixin.py:190} WARNING - 54.2%
+[2024-09-11T08:22:37.286+0000] {logging_mixin.py:190} WARNING - 54.3%
+[2024-09-11T08:22:37.297+0000] {logging_mixin.py:190} WARNING - 54.5%
+[2024-09-11T08:22:37.310+0000] {logging_mixin.py:190} WARNING - 54.6%
+[2024-09-11T08:22:37.320+0000] {logging_mixin.py:190} WARNING - 54.7%
+[2024-09-11T08:22:37.332+0000] {logging_mixin.py:190} WARNING - 54.8%
+[2024-09-11T08:22:37.339+0000] {logging_mixin.py:190} WARNING - 55.0%
+[2024-09-11T08:22:37.354+0000] {logging_mixin.py:190} WARNING - 55.1%
+[2024-09-11T08:22:37.362+0000] {logging_mixin.py:190} WARNING - 55.2%
+[2024-09-11T08:22:37.375+0000] {logging_mixin.py:190} WARNING - 55.4%
+[2024-09-11T08:22:37.387+0000] {logging_mixin.py:190} WARNING - 55.5%
+[2024-09-11T08:22:37.397+0000] {logging_mixin.py:190} WARNING - 55.6%
+[2024-09-11T08:22:37.407+0000] {logging_mixin.py:190} WARNING - 55.7%
+[2024-09-11T08:22:37.419+0000] {logging_mixin.py:190} WARNING - 55.9%
+[2024-09-11T08:22:37.431+0000] {logging_mixin.py:190} WARNING - 56.0%
+[2024-09-11T08:22:37.441+0000] {logging_mixin.py:190} WARNING - 56.1%
+[2024-09-11T08:22:37.455+0000] {logging_mixin.py:190} WARNING - 56.2%
+[2024-09-11T08:22:37.463+0000] {logging_mixin.py:190} WARNING - 56.4%
+[2024-09-11T08:22:37.473+0000] {logging_mixin.py:190} WARNING - 56.5%
+[2024-09-11T08:22:37.484+0000] {logging_mixin.py:190} WARNING - 56.6%
+[2024-09-11T08:22:37.497+0000] {logging_mixin.py:190} WARNING - 56.8%
+[2024-09-11T08:22:37.506+0000] {logging_mixin.py:190} WARNING - 56.9%
+[2024-09-11T08:22:37.520+0000] {logging_mixin.py:190} WARNING - 57.0%
+[2024-09-11T08:22:37.533+0000] {logging_mixin.py:190} WARNING - 57.1%
+[2024-09-11T08:22:37.541+0000] {logging_mixin.py:190} WARNING - 57.3%
+[2024-09-11T08:22:37.553+0000] {logging_mixin.py:190} WARNING - 57.4%
+[2024-09-11T08:22:37.564+0000] {logging_mixin.py:190} WARNING - 57.5%
+[2024-09-11T08:22:37.577+0000] {logging_mixin.py:190} WARNING - 57.7%
+[2024-09-11T08:22:37.588+0000] {logging_mixin.py:190} WARNING - 57.8%
+[2024-09-11T08:22:37.596+0000] {logging_mixin.py:190} WARNING - 57.9%
+[2024-09-11T08:22:37.606+0000] {logging_mixin.py:190} WARNING - 58.0%
+[2024-09-11T08:22:37.619+0000] {logging_mixin.py:190} WARNING - 58.2%
+[2024-09-11T08:22:37.627+0000] {logging_mixin.py:190} WARNING - 58.3%
+[2024-09-11T08:22:37.639+0000] {logging_mixin.py:190} WARNING - 58.4%
+[2024-09-11T08:22:37.653+0000] {logging_mixin.py:190} WARNING - 58.5%
+[2024-09-11T08:22:37.663+0000] {logging_mixin.py:190} WARNING - 58.7%
+[2024-09-11T08:22:37.675+0000] {logging_mixin.py:190} WARNING - 58.8%
+[2024-09-11T08:22:37.685+0000] {logging_mixin.py:190} WARNING - 58.9%
+[2024-09-11T08:22:37.694+0000] {logging_mixin.py:190} WARNING - 59.1%
+[2024-09-11T08:22:37.706+0000] {logging_mixin.py:190} WARNING - 59.2%
+[2024-09-11T08:22:37.716+0000] {logging_mixin.py:190} WARNING - 59.3%
+[2024-09-11T08:22:37.730+0000] {logging_mixin.py:190} WARNING - 59.4%
+[2024-09-11T08:22:37.740+0000] {logging_mixin.py:190} WARNING - 59.6%
+[2024-09-11T08:22:37.752+0000] {logging_mixin.py:190} WARNING - 59.7%
+[2024-09-11T08:22:37.761+0000] {logging_mixin.py:190} WARNING - 59.8%
+[2024-09-11T08:22:37.775+0000] {logging_mixin.py:190} WARNING - 60.0%
+[2024-09-11T08:22:37.784+0000] {logging_mixin.py:190} WARNING - 60.1%
+[2024-09-11T08:22:37.793+0000] {logging_mixin.py:190} WARNING - 60.2%
+[2024-09-11T08:22:37.806+0000] {logging_mixin.py:190} WARNING - 60.3%
+[2024-09-11T08:22:37.817+0000] {logging_mixin.py:190} WARNING - 60.5%
+[2024-09-11T08:22:37.827+0000] {logging_mixin.py:190} WARNING - 60.6%
+[2024-09-11T08:22:37.844+0000] {logging_mixin.py:190} WARNING - 60.7%
+[2024-09-11T08:22:37.852+0000] {logging_mixin.py:190} WARNING - 60.9%
+[2024-09-11T08:22:37.863+0000] {logging_mixin.py:190} WARNING - 61.0%
+[2024-09-11T08:22:37.874+0000] {logging_mixin.py:190} WARNING - 61.1%
+[2024-09-11T08:22:37.893+0000] {logging_mixin.py:190} WARNING - 61.2%
+[2024-09-11T08:22:37.895+0000] {logging_mixin.py:190} WARNING - 61.4%
+[2024-09-11T08:22:37.905+0000] {logging_mixin.py:190} WARNING - 61.5%
+[2024-09-11T08:22:37.919+0000] {logging_mixin.py:190} WARNING - 61.6%
+[2024-09-11T08:22:37.930+0000] {logging_mixin.py:190} WARNING - 61.7%
+[2024-09-11T08:22:37.942+0000] {logging_mixin.py:190} WARNING - 61.9%
+[2024-09-11T08:22:37.949+0000] {logging_mixin.py:190} WARNING - 62.0%
+[2024-09-11T08:22:37.962+0000] {logging_mixin.py:190} WARNING - 62.1%
+[2024-09-11T08:22:37.971+0000] {logging_mixin.py:190} WARNING - 62.3%
+[2024-09-11T08:22:37.982+0000] {logging_mixin.py:190} WARNING - 62.4%
+[2024-09-11T08:22:37.994+0000] {logging_mixin.py:190} WARNING - 62.5%
+[2024-09-11T08:22:38.006+0000] {logging_mixin.py:190} WARNING - 62.6%
+[2024-09-11T08:22:38.018+0000] {logging_mixin.py:190} WARNING - 62.8%
+[2024-09-11T08:22:38.026+0000] {logging_mixin.py:190} WARNING - 62.9%
+[2024-09-11T08:22:38.042+0000] {logging_mixin.py:190} WARNING - 63.0%
+[2024-09-11T08:22:38.052+0000] {logging_mixin.py:190} WARNING - 63.2%
+[2024-09-11T08:22:38.064+0000] {logging_mixin.py:190} WARNING - 63.3%
+[2024-09-11T08:22:38.080+0000] {logging_mixin.py:190} WARNING - 63.4%
+[2024-09-11T08:22:38.090+0000] {logging_mixin.py:190} WARNING - 63.5%
+[2024-09-11T08:22:38.103+0000] {logging_mixin.py:190} WARNING - 63.7%
+[2024-09-11T08:22:38.111+0000] {logging_mixin.py:190} WARNING - 63.8%
+[2024-09-11T08:22:38.123+0000] {logging_mixin.py:190} WARNING - 63.9%
+[2024-09-11T08:22:38.138+0000] {logging_mixin.py:190} WARNING - 64.0%
+[2024-09-11T08:22:38.146+0000] {logging_mixin.py:190} WARNING - 64.2%
+[2024-09-11T08:22:38.156+0000] {logging_mixin.py:190} WARNING - 64.3%
+[2024-09-11T08:22:38.167+0000] {logging_mixin.py:190} WARNING - 64.4%
+[2024-09-11T08:22:38.181+0000] {logging_mixin.py:190} WARNING - 64.6%
+[2024-09-11T08:22:38.192+0000] {logging_mixin.py:190} WARNING - 64.7%
+[2024-09-11T08:22:38.201+0000] {logging_mixin.py:190} WARNING - 64.8%
+[2024-09-11T08:22:38.212+0000] {logging_mixin.py:190} WARNING - 64.9%
+[2024-09-11T08:22:38.223+0000] {logging_mixin.py:190} WARNING - 65.1%
+[2024-09-11T08:22:38.235+0000] {logging_mixin.py:190} WARNING - 65.2%
+[2024-09-11T08:22:38.244+0000] {logging_mixin.py:190} WARNING - 65.3%
+[2024-09-11T08:22:38.258+0000] {logging_mixin.py:190} WARNING - 65.5%
+[2024-09-11T08:22:38.270+0000] {logging_mixin.py:190} WARNING - 65.6%
+[2024-09-11T08:22:38.278+0000] {logging_mixin.py:190} WARNING - 65.7%
+[2024-09-11T08:22:38.290+0000] {logging_mixin.py:190} WARNING - 65.8%
+[2024-09-11T08:22:38.302+0000] {logging_mixin.py:190} WARNING - 66.0%
+[2024-09-11T08:22:38.312+0000] {logging_mixin.py:190} WARNING - 66.1%
+[2024-09-11T08:22:38.324+0000] {logging_mixin.py:190} WARNING - 66.2%
+[2024-09-11T08:22:38.335+0000] {logging_mixin.py:190} WARNING - 66.3%
+[2024-09-11T08:22:38.345+0000] {logging_mixin.py:190} WARNING - 66.5%
+[2024-09-11T08:22:38.358+0000] {logging_mixin.py:190} WARNING - 66.6%
+[2024-09-11T08:22:38.367+0000] {logging_mixin.py:190} WARNING - 66.7%
+[2024-09-11T08:22:38.381+0000] {logging_mixin.py:190} WARNING - 66.9%
+[2024-09-11T08:22:38.389+0000] {logging_mixin.py:190} WARNING - 67.0%
+[2024-09-11T08:22:38.423+0000] {logging_mixin.py:190} WARNING - 67.1%
+[2024-09-11T08:22:38.428+0000] {logging_mixin.py:190} WARNING - 67.2%
+[2024-09-11T08:22:38.431+0000] {logging_mixin.py:190} WARNING - 67.4%
+[2024-09-11T08:22:38.434+0000] {logging_mixin.py:190} WARNING - 67.5%
+[2024-09-11T08:22:38.444+0000] {logging_mixin.py:190} WARNING - 67.6%
+[2024-09-11T08:22:38.454+0000] {logging_mixin.py:190} WARNING - 67.8%
+[2024-09-11T08:22:38.469+0000] {logging_mixin.py:190} WARNING - 67.9%
+[2024-09-11T08:22:38.476+0000] {logging_mixin.py:190} WARNING - 68.0%
+[2024-09-11T08:22:38.490+0000] {logging_mixin.py:190} WARNING - 68.1%
+[2024-09-11T08:22:38.501+0000] {logging_mixin.py:190} WARNING - 68.3%
+[2024-09-11T08:22:38.512+0000] {logging_mixin.py:190} WARNING - 68.4%
+[2024-09-11T08:22:38.524+0000] {logging_mixin.py:190} WARNING - 68.5%
+[2024-09-11T08:22:38.535+0000] {logging_mixin.py:190} WARNING - 68.6%
+[2024-09-11T08:22:38.545+0000] {logging_mixin.py:190} WARNING - 68.8%
+[2024-09-11T08:22:38.556+0000] {logging_mixin.py:190} WARNING - 68.9%
+[2024-09-11T08:22:38.570+0000] {logging_mixin.py:190} WARNING - 69.0%
+[2024-09-11T08:22:38.581+0000] {logging_mixin.py:190} WARNING - 69.2%
+[2024-09-11T08:22:38.593+0000] {logging_mixin.py:190} WARNING - 69.3%
+[2024-09-11T08:22:38.602+0000] {logging_mixin.py:190} WARNING - 69.4%
+[2024-09-11T08:22:38.615+0000] {logging_mixin.py:190} WARNING - 69.5%
+[2024-09-11T08:22:38.626+0000] {logging_mixin.py:190} WARNING - 69.7%
+[2024-09-11T08:22:38.637+0000] {logging_mixin.py:190} WARNING - 69.8%
+[2024-09-11T08:22:38.647+0000] {logging_mixin.py:190} WARNING - 69.9%
+[2024-09-11T08:22:38.657+0000] {logging_mixin.py:190} WARNING - 70.1%
+[2024-09-11T08:22:38.671+0000] {logging_mixin.py:190} WARNING - 70.2%
+[2024-09-11T08:22:38.683+0000] {logging_mixin.py:190} WARNING - 70.3%
+[2024-09-11T08:22:38.691+0000] {logging_mixin.py:190} WARNING - 70.4%
+[2024-09-11T08:22:38.703+0000] {logging_mixin.py:190} WARNING - 70.6%
+[2024-09-11T08:22:38.715+0000] {logging_mixin.py:190} WARNING - 70.7%
+[2024-09-11T08:22:38.726+0000] {logging_mixin.py:190} WARNING - 70.8%
+[2024-09-11T08:22:38.736+0000] {logging_mixin.py:190} WARNING - 70.9%
+[2024-09-11T08:22:38.748+0000] {logging_mixin.py:190} WARNING - 71.1%
+[2024-09-11T08:22:38.759+0000] {logging_mixin.py:190} WARNING - 71.2%
+[2024-09-11T08:22:38.772+0000] {logging_mixin.py:190} WARNING - 71.3%
+[2024-09-11T08:22:38.783+0000] {logging_mixin.py:190} WARNING - 71.5%
+[2024-09-11T08:22:38.793+0000] {logging_mixin.py:190} WARNING - 71.6%
+[2024-09-11T08:22:38.803+0000] {logging_mixin.py:190} WARNING - 71.7%
+[2024-09-11T08:22:38.815+0000] {logging_mixin.py:190} WARNING - 71.8%
+[2024-09-11T08:22:38.825+0000] {logging_mixin.py:190} WARNING - 72.0%
+[2024-09-11T08:22:38.834+0000] {logging_mixin.py:190} WARNING - 72.1%
+[2024-09-11T08:22:38.848+0000] {logging_mixin.py:190} WARNING - 72.2%
+[2024-09-11T08:22:38.856+0000] {logging_mixin.py:190} WARNING - 72.4%
+[2024-09-11T08:22:38.868+0000] {logging_mixin.py:190} WARNING - 72.5%
+[2024-09-11T08:22:38.880+0000] {logging_mixin.py:190} WARNING - 72.6%
+[2024-09-11T08:22:38.890+0000] {logging_mixin.py:190} WARNING - 72.7%
+[2024-09-11T08:22:38.902+0000] {logging_mixin.py:190} WARNING - 72.9%
+[2024-09-11T08:22:38.912+0000] {logging_mixin.py:190} WARNING - 73.0%
+[2024-09-11T08:22:38.923+0000] {logging_mixin.py:190} WARNING - 73.1%
+[2024-09-11T08:22:38.936+0000] {logging_mixin.py:190} WARNING - 73.3%
+[2024-09-11T08:22:38.945+0000] {logging_mixin.py:190} WARNING - 73.4%
+[2024-09-11T08:22:38.957+0000] {logging_mixin.py:190} WARNING - 73.5%
+[2024-09-11T08:22:38.967+0000] {logging_mixin.py:190} WARNING - 73.6%
+[2024-09-11T08:22:38.986+0000] {logging_mixin.py:190} WARNING - 73.8%
+[2024-09-11T08:22:38.997+0000] {logging_mixin.py:190} WARNING - 73.9%
+[2024-09-11T08:22:39.009+0000] {logging_mixin.py:190} WARNING - 74.0%
+[2024-09-11T08:22:39.019+0000] {logging_mixin.py:190} WARNING - 74.1%
+[2024-09-11T08:22:39.031+0000] {logging_mixin.py:190} WARNING - 74.3%
+[2024-09-11T08:22:39.042+0000] {logging_mixin.py:190} WARNING - 74.4%
+[2024-09-11T08:22:39.052+0000] {logging_mixin.py:190} WARNING - 74.5%
+[2024-09-11T08:22:39.065+0000] {logging_mixin.py:190} WARNING - 74.7%
+[2024-09-11T08:22:39.075+0000] {logging_mixin.py:190} WARNING - 74.8%
+[2024-09-11T08:22:39.087+0000] {logging_mixin.py:190} WARNING - 74.9%
+[2024-09-11T08:22:39.097+0000] {logging_mixin.py:190} WARNING - 75.0%
+[2024-09-11T08:22:39.107+0000] {logging_mixin.py:190} WARNING - 75.2%
+[2024-09-11T08:22:39.118+0000] {logging_mixin.py:190} WARNING - 75.3%
+[2024-09-11T08:22:39.132+0000] {logging_mixin.py:190} WARNING - 75.4%
+[2024-09-11T08:22:39.142+0000] {logging_mixin.py:190} WARNING - 75.6%
+[2024-09-11T08:22:39.153+0000] {logging_mixin.py:190} WARNING - 75.7%
+[2024-09-11T08:22:39.164+0000] {logging_mixin.py:190} WARNING - 75.8%
+[2024-09-11T08:22:39.176+0000] {logging_mixin.py:190} WARNING - 75.9%
+[2024-09-11T08:22:39.228+0000] {logging_mixin.py:190} WARNING - 76.1%
+[2024-09-11T08:22:39.232+0000] {logging_mixin.py:190} WARNING - 76.2%
+[2024-09-11T08:22:39.242+0000] {logging_mixin.py:190} WARNING - 76.3%
+[2024-09-11T08:22:39.247+0000] {logging_mixin.py:190} WARNING - 76.4%
+[2024-09-11T08:22:39.251+0000] {logging_mixin.py:190} WARNING - 76.6%
+[2024-09-11T08:22:39.254+0000] {logging_mixin.py:190} WARNING - 76.7%
+[2024-09-11T08:22:39.258+0000] {logging_mixin.py:190} WARNING - 76.8%
+[2024-09-11T08:22:39.266+0000] {logging_mixin.py:190} WARNING - 77.0%
+[2024-09-11T08:22:39.274+0000] {logging_mixin.py:190} WARNING - 77.1%
+[2024-09-11T08:22:39.284+0000] {logging_mixin.py:190} WARNING - 77.2%
+[2024-09-11T08:22:39.295+0000] {logging_mixin.py:190} WARNING - 77.3%
+[2024-09-11T08:22:39.307+0000] {logging_mixin.py:190} WARNING - 77.5%
+[2024-09-11T08:22:39.318+0000] {logging_mixin.py:190} WARNING - 77.6%
+[2024-09-11T08:22:39.331+0000] {logging_mixin.py:190} WARNING - 77.7%
+[2024-09-11T08:22:39.344+0000] {logging_mixin.py:190} WARNING - 77.9%
+[2024-09-11T08:22:39.352+0000] {logging_mixin.py:190} WARNING - 78.0%
+[2024-09-11T08:22:39.362+0000] {logging_mixin.py:190} WARNING - 78.1%
+[2024-09-11T08:22:39.375+0000] {logging_mixin.py:190} WARNING - 78.2%
+[2024-09-11T08:22:39.385+0000] {logging_mixin.py:190} WARNING - 78.4%
+[2024-09-11T08:22:39.394+0000] {logging_mixin.py:190} WARNING - 78.5%
+[2024-09-11T08:22:39.407+0000] {logging_mixin.py:190} WARNING - 78.6%
+[2024-09-11T08:22:39.416+0000] {logging_mixin.py:190} WARNING - 78.7%
+[2024-09-11T08:22:39.430+0000] {logging_mixin.py:190} WARNING - 78.9%
+[2024-09-11T08:22:39.438+0000] {logging_mixin.py:190} WARNING - 79.0%
+[2024-09-11T08:22:39.450+0000] {logging_mixin.py:190} WARNING - 79.1%
+[2024-09-11T08:22:39.462+0000] {logging_mixin.py:190} WARNING - 79.3%
+[2024-09-11T08:22:39.475+0000] {logging_mixin.py:190} WARNING - 79.4%
+[2024-09-11T08:22:39.484+0000] {logging_mixin.py:190} WARNING - 79.5%
+[2024-09-11T08:22:39.494+0000] {logging_mixin.py:190} WARNING - 79.6%
+[2024-09-11T08:22:39.506+0000] {logging_mixin.py:190} WARNING - 79.8%
+[2024-09-11T08:22:39.518+0000] {logging_mixin.py:190} WARNING - 79.9%
+[2024-09-11T08:22:39.528+0000] {logging_mixin.py:190} WARNING - 80.0%
+[2024-09-11T08:22:39.539+0000] {logging_mixin.py:190} WARNING - 80.2%
+[2024-09-11T08:22:39.550+0000] {logging_mixin.py:190} WARNING - 80.3%
+[2024-09-11T08:22:39.561+0000] {logging_mixin.py:190} WARNING - 80.4%
+[2024-09-11T08:22:39.573+0000] {logging_mixin.py:190} WARNING - 80.5%
+[2024-09-11T08:22:39.583+0000] {logging_mixin.py:190} WARNING - 80.7%
+[2024-09-11T08:22:39.597+0000] {logging_mixin.py:190} WARNING - 80.8%
+[2024-09-11T08:22:39.605+0000] {logging_mixin.py:190} WARNING - 80.9%
+[2024-09-11T08:22:39.619+0000] {logging_mixin.py:190} WARNING - 81.0%
+[2024-09-11T08:22:39.627+0000] {logging_mixin.py:190} WARNING - 81.2%
+[2024-09-11T08:22:39.642+0000] {logging_mixin.py:190} WARNING - 81.3%
+[2024-09-11T08:22:39.649+0000] {logging_mixin.py:190} WARNING - 81.4%
+[2024-09-11T08:22:39.662+0000] {logging_mixin.py:190} WARNING - 81.6%
+[2024-09-11T08:22:39.672+0000] {logging_mixin.py:190} WARNING - 81.7%
+[2024-09-11T08:22:39.684+0000] {logging_mixin.py:190} WARNING - 81.8%
+[2024-09-11T08:22:39.695+0000] {logging_mixin.py:190} WARNING - 81.9%
+[2024-09-11T08:22:39.707+0000] {logging_mixin.py:190} WARNING - 82.1%
+[2024-09-11T08:22:39.718+0000] {logging_mixin.py:190} WARNING - 82.2%
+[2024-09-11T08:22:39.730+0000] {logging_mixin.py:190} WARNING - 82.3%
+[2024-09-11T08:22:39.741+0000] {logging_mixin.py:190} WARNING - 82.5%
+[2024-09-11T08:22:39.751+0000] {logging_mixin.py:190} WARNING - 82.6%
+[2024-09-11T08:22:39.759+0000] {logging_mixin.py:190} WARNING - 82.7%
+[2024-09-11T08:22:39.771+0000] {logging_mixin.py:190} WARNING - 82.8%
+[2024-09-11T08:22:39.783+0000] {logging_mixin.py:190} WARNING - 83.0%
+[2024-09-11T08:22:39.795+0000] {logging_mixin.py:190} WARNING - 83.1%
+[2024-09-11T08:22:39.807+0000] {logging_mixin.py:190} WARNING - 83.2%
+[2024-09-11T08:22:39.817+0000] {logging_mixin.py:190} WARNING - 83.3%
+[2024-09-11T08:22:39.827+0000] {logging_mixin.py:190} WARNING - 83.5%
+[2024-09-11T08:22:39.841+0000] {logging_mixin.py:190} WARNING - 83.6%
+[2024-09-11T08:22:39.851+0000] {logging_mixin.py:190} WARNING - 83.7%
+[2024-09-11T08:22:39.863+0000] {logging_mixin.py:190} WARNING - 83.9%
+[2024-09-11T08:22:39.873+0000] {logging_mixin.py:190} WARNING - 84.0%
+[2024-09-11T08:22:39.885+0000] {logging_mixin.py:190} WARNING - 84.1%
+[2024-09-11T08:22:39.894+0000] {logging_mixin.py:190} WARNING - 84.2%
+[2024-09-11T08:22:39.904+0000] {logging_mixin.py:190} WARNING - 84.4%
+[2024-09-11T08:22:39.917+0000] {logging_mixin.py:190} WARNING - 84.5%
+[2024-09-11T08:22:39.930+0000] {logging_mixin.py:190} WARNING - 84.6%
+[2024-09-11T08:22:39.940+0000] {logging_mixin.py:190} WARNING - 84.8%
+[2024-09-11T08:22:39.950+0000] {logging_mixin.py:190} WARNING - 84.9%
+[2024-09-11T08:22:39.963+0000] {logging_mixin.py:190} WARNING - 85.0%
+[2024-09-11T08:22:39.972+0000] {logging_mixin.py:190} WARNING - 85.1%
+[2024-09-11T08:22:39.982+0000] {logging_mixin.py:190} WARNING - 85.3%
+[2024-09-11T08:22:39.995+0000] {logging_mixin.py:190} WARNING - 85.4%
+[2024-09-11T08:22:40.006+0000] {logging_mixin.py:190} WARNING - 85.5%
+[2024-09-11T08:22:40.016+0000] {logging_mixin.py:190} WARNING - 85.7%
+[2024-09-11T08:22:40.026+0000] {logging_mixin.py:190} WARNING - 85.8%
+[2024-09-11T08:22:40.038+0000] {logging_mixin.py:190} WARNING - 85.9%
+[2024-09-11T08:22:40.050+0000] {logging_mixin.py:190} WARNING - 86.0%
+[2024-09-11T08:22:40.061+0000] {logging_mixin.py:190} WARNING - 86.2%
+[2024-09-11T08:22:40.071+0000] {logging_mixin.py:190} WARNING - 86.3%
+[2024-09-11T08:22:40.084+0000] {logging_mixin.py:190} WARNING - 86.4%
+[2024-09-11T08:22:40.093+0000] {logging_mixin.py:190} WARNING - 86.5%
+[2024-09-11T08:22:40.111+0000] {logging_mixin.py:190} WARNING - 86.7%
+[2024-09-11T08:22:40.115+0000] {logging_mixin.py:190} WARNING - 86.8%
+[2024-09-11T08:22:40.127+0000] {logging_mixin.py:190} WARNING - 86.9%
+[2024-09-11T08:22:40.138+0000] {logging_mixin.py:190} WARNING - 87.1%
+[2024-09-11T08:22:40.150+0000] {logging_mixin.py:190} WARNING - 87.2%
+[2024-09-11T08:22:40.161+0000] {logging_mixin.py:190} WARNING - 87.3%
+[2024-09-11T08:22:40.171+0000] {logging_mixin.py:190} WARNING - 87.4%
+[2024-09-11T08:22:40.183+0000] {logging_mixin.py:190} WARNING - 87.6%
+[2024-09-11T08:22:40.194+0000] {logging_mixin.py:190} WARNING - 87.7%
+[2024-09-11T08:22:40.205+0000] {logging_mixin.py:190} WARNING - 87.8%
+[2024-09-11T08:22:40.216+0000] {logging_mixin.py:190} WARNING - 88.0%
+[2024-09-11T08:22:40.225+0000] {logging_mixin.py:190} WARNING - 88.1%
+[2024-09-11T08:22:40.235+0000] {logging_mixin.py:190} WARNING - 88.2%
+[2024-09-11T08:22:40.248+0000] {logging_mixin.py:190} WARNING - 88.3%
+[2024-09-11T08:22:40.259+0000] {logging_mixin.py:190} WARNING - 88.5%
+[2024-09-11T08:22:40.274+0000] {logging_mixin.py:190} WARNING - 88.6%
+[2024-09-11T08:22:40.281+0000] {logging_mixin.py:190} WARNING - 88.7%
+[2024-09-11T08:22:40.291+0000] {logging_mixin.py:190} WARNING - 88.8%
+[2024-09-11T08:22:40.306+0000] {logging_mixin.py:190} WARNING - 89.0%
+[2024-09-11T08:22:40.315+0000] {logging_mixin.py:190} WARNING - 89.1%
+[2024-09-11T08:22:40.327+0000] {logging_mixin.py:190} WARNING - 89.2%
+[2024-09-11T08:22:40.337+0000] {logging_mixin.py:190} WARNING - 89.4%
+[2024-09-11T08:22:40.349+0000] {logging_mixin.py:190} WARNING - 89.5%
+[2024-09-11T08:22:40.359+0000] {logging_mixin.py:190} WARNING - 89.6%
+[2024-09-11T08:22:40.372+0000] {logging_mixin.py:190} WARNING - 89.7%
+[2024-09-11T08:22:40.383+0000] {logging_mixin.py:190} WARNING - 89.9%
+[2024-09-11T08:22:40.392+0000] {logging_mixin.py:190} WARNING - 90.0%
+[2024-09-11T08:22:40.405+0000] {logging_mixin.py:190} WARNING - 90.1%
+[2024-09-11T08:22:40.416+0000] {logging_mixin.py:190} WARNING - 90.3%
+[2024-09-11T08:22:40.426+0000] {logging_mixin.py:190} WARNING - 90.4%
+[2024-09-11T08:22:40.438+0000] {logging_mixin.py:190} WARNING - 90.5%
+[2024-09-11T08:22:40.448+0000] {logging_mixin.py:190} WARNING - 90.6%
+[2024-09-11T08:22:40.461+0000] {logging_mixin.py:190} WARNING - 90.8%
+[2024-09-11T08:22:40.469+0000] {logging_mixin.py:190} WARNING - 90.9%
+[2024-09-11T08:22:40.482+0000] {logging_mixin.py:190} WARNING - 91.0%
+[2024-09-11T08:22:40.492+0000] {logging_mixin.py:190} WARNING - 91.1%
+[2024-09-11T08:22:40.504+0000] {logging_mixin.py:190} WARNING - 91.3%
+[2024-09-11T08:22:40.515+0000] {logging_mixin.py:190} WARNING - 91.4%
+[2024-09-11T08:22:40.527+0000] {logging_mixin.py:190} WARNING - 91.5%
+[2024-09-11T08:22:40.537+0000] {logging_mixin.py:190} WARNING - 91.7%
+[2024-09-11T08:22:40.547+0000] {logging_mixin.py:190} WARNING - 91.8%
+[2024-09-11T08:22:40.559+0000] {logging_mixin.py:190} WARNING - 91.9%
+[2024-09-11T08:22:40.571+0000] {logging_mixin.py:190} WARNING - 92.0%
+[2024-09-11T08:22:40.580+0000] {logging_mixin.py:190} WARNING - 92.2%
+[2024-09-11T08:22:40.593+0000] {logging_mixin.py:190} WARNING - 92.3%
+[2024-09-11T08:22:40.604+0000] {logging_mixin.py:190} WARNING - 92.4%
+[2024-09-11T08:22:40.616+0000] {logging_mixin.py:190} WARNING - 92.6%
+[2024-09-11T08:22:40.625+0000] {logging_mixin.py:190} WARNING - 92.7%
+[2024-09-11T08:22:40.638+0000] {logging_mixin.py:190} WARNING - 92.8%
+[2024-09-11T08:22:40.646+0000] {logging_mixin.py:190} WARNING - 92.9%
+[2024-09-11T08:22:40.660+0000] {logging_mixin.py:190} WARNING - 93.1%
+[2024-09-11T08:22:40.670+0000] {logging_mixin.py:190} WARNING - 93.2%
+[2024-09-11T08:22:40.680+0000] {logging_mixin.py:190} WARNING - 93.3%
+[2024-09-11T08:22:40.694+0000] {logging_mixin.py:190} WARNING - 93.4%
+[2024-09-11T08:22:40.708+0000] {logging_mixin.py:190} WARNING - 93.6%
+[2024-09-11T08:22:40.722+0000] {logging_mixin.py:190} WARNING - 93.7%
+[2024-09-11T08:22:40.730+0000] {logging_mixin.py:190} WARNING - 93.8%
+[2024-09-11T08:22:40.742+0000] {logging_mixin.py:190} WARNING - 94.0%
+[2024-09-11T08:22:40.752+0000] {logging_mixin.py:190} WARNING - 94.1%
+[2024-09-11T08:22:40.764+0000] {logging_mixin.py:190} WARNING - 94.2%
+[2024-09-11T08:22:40.775+0000] {logging_mixin.py:190} WARNING - 94.3%
+[2024-09-11T08:22:40.792+0000] {logging_mixin.py:190} WARNING - 94.5%
+[2024-09-11T08:22:40.802+0000] {logging_mixin.py:190} WARNING - 94.6%
+[2024-09-11T08:22:40.815+0000] {logging_mixin.py:190} WARNING - 94.7%
+[2024-09-11T08:22:40.826+0000] {logging_mixin.py:190} WARNING - 94.9%
+[2024-09-11T08:22:40.836+0000] {logging_mixin.py:190} WARNING - 95.0%
+[2024-09-11T08:22:40.847+0000] {logging_mixin.py:190} WARNING - 95.1%
+[2024-09-11T08:22:40.859+0000] {logging_mixin.py:190} WARNING - 95.2%
+[2024-09-11T08:22:40.871+0000] {logging_mixin.py:190} WARNING - 95.4%
+[2024-09-11T08:22:40.879+0000] {logging_mixin.py:190} WARNING - 95.5%
+[2024-09-11T08:22:40.891+0000] {logging_mixin.py:190} WARNING - 95.6%
+[2024-09-11T08:22:40.903+0000] {logging_mixin.py:190} WARNING - 95.8%
+[2024-09-11T08:22:40.912+0000] {logging_mixin.py:190} WARNING - 95.9%
+[2024-09-11T08:22:40.925+0000] {logging_mixin.py:190} WARNING - 96.0%
+[2024-09-11T08:22:40.935+0000] {logging_mixin.py:190} WARNING - 96.1%
+[2024-09-11T08:22:40.946+0000] {logging_mixin.py:190} WARNING - 96.3%
+[2024-09-11T08:22:40.956+0000] {logging_mixin.py:190} WARNING - 96.4%
+[2024-09-11T08:22:40.968+0000] {logging_mixin.py:190} WARNING - 96.5%
+[2024-09-11T08:22:40.979+0000] {logging_mixin.py:190} WARNING - 96.6%
+[2024-09-11T08:22:40.990+0000] {logging_mixin.py:190} WARNING - 96.8%
+[2024-09-11T08:22:41.002+0000] {logging_mixin.py:190} WARNING - 96.9%
+[2024-09-11T08:22:41.015+0000] {logging_mixin.py:190} WARNING - 97.0%
+[2024-09-11T08:22:41.024+0000] {logging_mixin.py:190} WARNING - 97.2%
+[2024-09-11T08:22:41.036+0000] {logging_mixin.py:190} WARNING - 97.3%
+[2024-09-11T08:22:41.046+0000] {logging_mixin.py:190} WARNING - 97.4%
+[2024-09-11T08:22:41.060+0000] {logging_mixin.py:190} WARNING - 97.5%
+[2024-09-11T08:22:41.067+0000] {logging_mixin.py:190} WARNING - 97.7%
+[2024-09-11T08:22:41.082+0000] {logging_mixin.py:190} WARNING - 97.8%
+[2024-09-11T08:22:41.090+0000] {logging_mixin.py:190} WARNING - 97.9%
+[2024-09-11T08:22:41.101+0000] {logging_mixin.py:190} WARNING - 98.1%
+[2024-09-11T08:22:41.113+0000] {logging_mixin.py:190} WARNING - 98.2%
+[2024-09-11T08:22:41.125+0000] {logging_mixin.py:190} WARNING - 98.3%
+[2024-09-11T08:22:41.136+0000] {logging_mixin.py:190} WARNING - 98.4%
+[2024-09-11T08:22:41.146+0000] {logging_mixin.py:190} WARNING - 98.6%
+[2024-09-11T08:22:41.158+0000] {logging_mixin.py:190} WARNING - 98.7%
+[2024-09-11T08:22:41.167+0000] {logging_mixin.py:190} WARNING - 98.8%
+[2024-09-11T08:22:41.183+0000] {logging_mixin.py:190} WARNING - 98.9%
+[2024-09-11T08:22:41.191+0000] {logging_mixin.py:190} WARNING - 99.1%
+[2024-09-11T08:22:41.201+0000] {logging_mixin.py:190} WARNING - 99.2%
+[2024-09-11T08:22:41.213+0000] {logging_mixin.py:190} WARNING - 99.3%
+[2024-09-11T08:22:41.223+0000] {logging_mixin.py:190} WARNING - 99.5%
+[2024-09-11T08:22:41.234+0000] {logging_mixin.py:190} WARNING - 99.6%
+[2024-09-11T08:22:41.244+0000] {logging_mixin.py:190} WARNING - 99.7%
+[2024-09-11T08:22:41.257+0000] {logging_mixin.py:190} WARNING - 99.8%
+[2024-09-11T08:22:41.268+0000] {logging_mixin.py:190} WARNING - 100.0%
+[2024-09-11T08:22:41.271+0000] {logging_mixin.py:190} WARNING - 100.0%
+[2024-09-11T08:22:41.628+0000] {python.py:240} INFO - Done. Returned value was: {'model_path': '/tmp/model.pth', 'device': 'cpu', 'trainloader_path': '/tmp/trainloader.pth'}
+[2024-09-11T08:22:41.657+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-11T08:22:41.658+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=welcome_dag, task_id=work_with_model, run_id=manual__2024-09-11T08:21:17.480199+00:00, execution_date=20240911T082117, start_date=20240911T082230, end_date=20240911T082241
+[2024-09-11T08:22:41.672+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-09-11T08:22:41.673+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-09-11T08:22:41.673+0000] {logging_mixin.py:190} INFO - Dag name:welcome_dag queued_at:2024-09-11 08:21:17.497193+00:00
+[2024-09-11T08:22:41.674+0000] {logging_mixin.py:190} INFO - Task hostname:54117699e6d9 operator:PythonOperator
+[2024-09-11T08:22:41.713+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-11T08:22:41.742+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-11T08:22:41.745+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

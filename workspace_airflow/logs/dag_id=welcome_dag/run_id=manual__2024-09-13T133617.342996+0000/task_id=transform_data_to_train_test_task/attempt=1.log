@@ -1,0 +1,46 @@
+[2024-09-13T13:36:21.614+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-13T13:36:21.632+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: welcome_dag.transform_data_to_train_test_task manual__2024-09-13T13:36:17.342996+00:00 [queued]>
+[2024-09-13T13:36:21.638+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: welcome_dag.transform_data_to_train_test_task manual__2024-09-13T13:36:17.342996+00:00 [queued]>
+[2024-09-13T13:36:21.640+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-13T13:36:21.650+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): transform_data_to_train_test_task> on 2024-09-13 13:36:17.342996+00:00
+[2024-09-13T13:36:21.661+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=572) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-13T13:36:21.663+0000] {standard_task_runner.py:72} INFO - Started process 574 to run task
+[2024-09-13T13:36:21.663+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'welcome_dag', 'transform_data_to_train_test_task', 'manual__2024-09-13T13:36:17.342996+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/welcome.py', '--cfg-path', '/tmp/tmppkmqw_un']
+[2024-09-13T13:36:21.664+0000] {standard_task_runner.py:105} INFO - Job 46: Subtask transform_data_to_train_test_task
+[2024-09-13T13:36:21.705+0000] {task_command.py:467} INFO - Running <TaskInstance: welcome_dag.transform_data_to_train_test_task manual__2024-09-13T13:36:17.342996+00:00 [running]> on host 620abf759a7f
+[2024-09-13T13:36:21.775+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='welcome_dag' AIRFLOW_CTX_TASK_ID='transform_data_to_train_test_task' AIRFLOW_CTX_EXECUTION_DATE='2024-09-13T13:36:17.342996+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-13T13:36:17.342996+00:00'
+[2024-09-13T13:36:21.777+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-13T13:36:21.778+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-13T13:36:21.778+0000] {logging_mixin.py:190} INFO - Current task name:transform_data_to_train_test_task state:running start_date:2024-09-13 13:36:21.632794+00:00
+[2024-09-13T13:36:21.778+0000] {logging_mixin.py:190} INFO - Dag name:welcome_dag and current dag run status:running
+[2024-09-13T13:36:21.779+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-13T13:36:23.721+0000] {logging_mixin.py:190} INFO - Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ./data/cifar-10-python.tar.gz
+[2024-09-13T13:36:25.481+0000] {logging_mixin.py:190} WARNING - 0.0%
+[2024-09-13T13:36:26.168+0000] {logging_mixin.py:190} WARNING - 0.0%
+[2024-09-13T13:36:28.011+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:36:28.744+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:36:29.793+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:36:31.786+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:36:35.213+0000] {logging_mixin.py:190} WARNING - 0.1%
+[2024-09-13T13:36:37.985+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:36:40.116+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:36:41.853+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:36:44.775+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:36:46.122+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:36:48.388+0000] {logging_mixin.py:190} WARNING - 0.2%
+[2024-09-13T13:36:49.765+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:36:51.160+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:36:52.991+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:36:55.592+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:36:58.101+0000] {logging_mixin.py:190} WARNING - 0.3%
+[2024-09-13T13:36:59.319+0000] {logging_mixin.py:190} WARNING - 0.4%
+[2024-09-13T13:37:00.365+0000] {logging_mixin.py:190} WARNING - 0.4%
+[2024-09-13T13:37:02.087+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-09-13T13:37:02.088+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-09-13T13:37:02.090+0000] {process_utils.py:132} INFO - Sending 15 to group 574. PIDs of all processes in the group: [574]
+[2024-09-13T13:37:02.090+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 574
+[2024-09-13T13:37:02.091+0000] {taskinstance.py:3092} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-09-13T13:37:02.106+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-13T13:37:02.143+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=574, status='terminated', exitcode=0, started='13:36:21') (574) terminated with exit code 0
